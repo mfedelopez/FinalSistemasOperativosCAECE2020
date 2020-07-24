@@ -30,7 +30,7 @@ class Simulador:
         self.ciclo = 0
 
     def log_simulacion(self, txt):
-        print(f'[{datetime.datetime.now()}] Simulador -- ciclo {self.ciclo} - {txt}')
+        print(f'\n[{datetime.datetime.now()}] Simulador -- ciclo {self.ciclo} - {txt}')
 
     def iniciar(self):
         while True:
@@ -39,7 +39,7 @@ class Simulador:
             #para no complicarnos con procesar de mas, si no tengo nada en la cola de espera y no tengo nada en la cola
             #de ejecucion, duermo el proceso y rompo el loop principal hasta que carguen de afuera mas procesos
             if not self.cola_espera and not self.cola_procesos:
-                self.log_simulacion('Nada mas que procesar... espero hasta el proximo ciclo')
+                self.log_simulacion(f'Nada mas que procesar... espero hasta el proximo ciclo [{self.tiempo_sleep}s]')
                 self.ciclo += 1
                 time.sleep(self.tiempo_sleep)
                 continue
@@ -53,10 +53,12 @@ class Simulador:
 
                 if self.recurso.puedo_ejecutar_proceso(proceso_actual):
                     self.log_simulacion('Puedo ejecutar proceso actual')
-                    x = threading.Thread(target=proceso_actual.realizar_accion)
+                    x = threading.Thread(target=proceso_actual.realizar_accion, args=(self.recurso,))
                     x.start()
                 else:
                     self.cola_procesos.append(proceso_actual)
+            else:
+                self.log_simulacion('Todavia no puedo ejecutar proceso de la cola de espera')
 
             # terminamos el ciclo
             self.log_simulacion('fin')

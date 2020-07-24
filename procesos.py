@@ -7,7 +7,7 @@ class Proceso:
         self.tiempo_accion = kwargs.get('tiempo_accion')
         self.tiempo_entrada = kwargs.get('tiempo_entrada')
         self.pid = kwargs.get('pid')
-        self.demanda_recursos = kwargs.get('demanda_recursos')
+        self.demanda_recursos = kwargs.get('demanda_recursos', 100)
 
         #necesitamos que esten bien los parametros
         if not (self.accion and self.tiempo_entrada and self.tiempo_accion):
@@ -20,15 +20,31 @@ class Proceso:
 
     def log(self, txt):
         print(f'[{datetime.datetime.now()}] - PID {self.pid} - {txt}')
-
-    def realizar_accion(self):
-        self.log('inicio')
+        
+    def realizar_accion(self, recurso):
+        self.log('Inicio')
         if self.accion in ['Lectura']:
+            self.log(f'Tomando {self.demanda_recursos} recursos ...')
+            recurso.tomar_recursos(self.demanda_recursos)
+
+            #simulo procesamiento            
             self.log('Leyendo ...')
             time.sleep(self.tiempo_accion)
-            self.log('Termino la lectura')
+            self.log('Termino la lectura ...')
+
+            self.log(f'Liberando {self.demanda_recursos} recursos ...')            
+            recurso.liberar_recursos(self.demanda_recursos)
         else:
+            self.log(f'Tomando mutex escritura ...')
+            recurso.bloquear_mutex()
+            
+            #simulo procesamiento
             self.log('Escribiendo ...')
             time.sleep(self.tiempo_accion)
-            self.log('Termino la escritura')
-
+            self.log('Termino la escritura ...')            
+            
+            self.log(f'Liberando mutex escritura ...')
+            recurso.desbloquear_mutex()
+            
+        self.log('Fin')
+        

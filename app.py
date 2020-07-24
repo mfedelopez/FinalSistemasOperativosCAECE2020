@@ -26,6 +26,8 @@ class App:
 if __name__ == '__main__':
     app = App()
     app.set_simulador(Simulador())
-    app.agregar_procesos([Proceso(accion='Lectura', tiempo_accion=1, tiempo_entrada=1, pid=1),
-                          Proceso(accion='Lectura', tiempo_accion=1, tiempo_entrada=3, pid=2)])
+    app.agregar_procesos([
+            #Proceso(accion='Lectura', tiempo_accion=1, tiempo_entrada=1, pid=1),
+            #              Proceso(accion='Lectura', tiempo_accion=1, tiempo_entrada=3, pid=2),
+                          Proceso(accion='Escritura', tiempo_accion=15, tiempo_entrada=1, pid=1)])
     app.simulador.iniciar()
