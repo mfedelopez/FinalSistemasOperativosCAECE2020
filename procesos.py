@@ -1,4 +1,6 @@
 import time
+import datetime
+
 class Proceso:
     def __init__(self, **kwargs):
         self.accion = kwargs.get('accion', 'lectura')
@@ -16,14 +18,17 @@ class Proceso:
     def __str__(self):
         return f'PID: [{self.pid}] ACCION [{self.accion}] T0 [{self.tiempo_entrada}] TA [{self.tiempo_accion}]'
 
+    def log(self, txt):
+        print(f'[{datetime.datetime.now()}] - PID {self.pid} - {txt}')
+
     def realizar_accion(self):
-        print(f'PID {self.pid} - inicio')
+        self.log('inicio')
         if self.accion in ['Lectura']:
-            print(f'PID {self.pid} - Leyendo ...')
+            self.log('Leyendo ...')
             time.sleep(self.tiempo_accion)
-            print(f'PID {self.pid} - Termino la lectura')
+            self.log('Termino la lectura')
         else:
-            print(f'PID {self.pid} - Escribiendo ...')
+            self.log('Escribiendo ...')
             time.sleep(self.tiempo_accion)
-            print(f'PID {self.pid} - Termino la escritura')
+            self.log('Termino la escritura')
 
