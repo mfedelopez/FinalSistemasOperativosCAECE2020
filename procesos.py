@@ -47,6 +47,6 @@ class Proceso:
             
             self.log(f'Liberando mutex escritura ...')
             recurso.desbloquear_mutex()
-            
+        
         self.log('Fin')
         

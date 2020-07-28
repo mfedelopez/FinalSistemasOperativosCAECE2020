@@ -25,24 +25,62 @@ class Recurso:
         #bloqueo el semaforo para que no puedan escribir
         self.mutex_escritura = False
         
+        #desbloqueo el mutex de interrupcion asi dejan de encolarse procesos
+        self.mutex_interrupcion = False
+        
+    def determinar_error_lectura(self, proceso):
+        #funcion que me devuelve el mensaje de error para mostrar por consola
+        error = ''
+        if self.mutex_escritura:
+            error += 'mutex de escritura activado '
+             
+        if not self.cantidad_recursos - proceso.demanda_recursos > 0:
+            error += 'no tengo recursos disponibles '
+             
+        if self.mutex_interrupcion:
+            error += 'activada la interrupcion '
+                          
+        return error if error else "ERROR INDEFINIDO"
+    
+    def determinar_error_escritura(self):
+        #funcion que me devuelve el mensaje de error para mostrar por consola
+        error = ''
+        
+        if self.cantidad_lecturas:
+            error += 'todavia hay procesos leyendo '
+            self.mutex_interrupcion = True
+            
+        if self.mutex_escritura:
+            error += 'todavia hay un proceso escribiendo '
+                          
+#        if self.mutex_interrupcion:
+#            error += 'interrupcion activa'
+        return error if error else "ERROR INDEFINIDO"     
+        
     def puedo_ejecutar_proceso(self, proceso):
         # accion = leer
         if proceso.accion in ['Lectura']:
-            #si no hay un lector actualmente y tengo los recursos suficientes, puedo leer
-            #cantidad de recursos se cancela hasta nuevo aviso
-             if not self.mutex_escritura: #and self.cantidad_recursos - proceso.cantidad_recursos > 0:
-                 #self.cantidad_recursos -= proceso.cantidad_recursos
-                 return True
+             #condiciones para poder ejecutar un proceso lector:
+             #1-no hay otro escritor ejecutandose actualmente (mutex_lectura)
+             #2-tengo los recursos que necesito
+             #3-no hay un escritor esperando (esos tienen mas prioridad)
+             if not self.mutex_escritura and self.cantidad_recursos - proceso.demanda_recursos > 0 and not self.mutex_interrupcion:
+                 return True, 'OK'
+             else:
+                 #enumeramos los errores que pueden llegar a darse, para poder logear mas lindo
+                 error = self.determinar_error_lectura(proceso)
+                 return False, f'{error}'
         elif proceso.accion in ['Escritura']:
-            #primero tengo que fijarme que todos los lectores hayan terminado de leer
-            if self.cantidad_lecturas:
-                #si tengo al menos un lector, el escritor tiene que esperar
-                return False
+            #condiciones para poder ejecutar un proceso escritor:
+            #1-no hay otro escritor esperando (mutex_interrupcion)
+            #2-no hay lectores ejecutandose actualmente
+            #3-no hay otro escritor ejecutandose actualmente (mutex_lectura)
+            if not self.mutex_escritura and not self.cantidad_lecturas:# and not self.mutex_interrupcion:
+                return True, 'OK'
             else:
-                #no tengo ningun lector esperando, veo si no hay otro escritor
-                if not self.mutex_escritura:
-                    #procedo a ejecutar este proceso
-                    return True
+                #enumeramos los errores que pueden llegar a darse para mejor logeo
+                error = self.determinar_error_escritura()
+                return False, f'{error}'
         else:
             raise Exception(f'RECURSO -> ACCION INDEFINIDA {proceso.accion}')
             

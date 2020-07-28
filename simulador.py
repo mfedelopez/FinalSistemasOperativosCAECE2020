@@ -71,11 +71,13 @@ class Simulador:
     
                     self.log_simulacion(f'Sale de cola de espera -> {proceso_actual}')
     
-                    if self.recurso.puedo_ejecutar_proceso(proceso_actual):
+                    puedo_ejecutar, msg = self.recurso.puedo_ejecutar_proceso(proceso_actual)
+                    if puedo_ejecutar:
                         self.log_simulacion('Puedo ejecutar proceso actual')
                         self.lanzar_proceso(proceso_actual)
                     else:
                         self.log_simulacion('No puedo ejecutar actualmente, agrego a cola de procesos')
+                        self.log_simulacion(f'Razon: {msg}')
                         self.cola_procesos.append(proceso_actual)
                         
                     ejecute_un_proceso = True
@@ -89,16 +91,15 @@ class Simulador:
             if not ejecute_un_proceso:
                 if self.cola_procesos:
                     self.log_simulacion(f'Hay {len(self.cola_procesos)} proceso/s esperando que se liberen recursos')
-                    if self.recurso.puedo_ejecutar_proceso(self.cola_procesos[0]):
+                    self.log_simulacion(f'Cola de procesos pendientes {[p.pid for p in self.cola_procesos]}')
+                    puedo_ejecutar, msg = self.recurso.puedo_ejecutar_proceso(self.cola_procesos[0])
+                    if puedo_ejecutar:
                         self.log_simulacion('Puedo ejecutar proceso pendiente')
                         proceso_actual = self.cola_procesos.popleft()
                         self.lanzar_proceso(proceso_actual)
                     else:
-                        self.log_simulacion('Los recursos necesarios todavia no fueron liberados')
-                        
-                    
-                    
-                
+                        self.log_simulacion('Todavia no puedo ejecutar proceso pendiente')
+                        self.log_simulacion(f'Razon: {msg}')
 
             # terminamos el ciclo
             self.log_simulacion('fin')
