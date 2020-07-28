@@ -8,6 +8,7 @@ class Proceso:
         self.tiempo_entrada = kwargs.get('tiempo_entrada')
         self.pid = kwargs.get('pid')
         self.demanda_recursos = kwargs.get('demanda_recursos', 100)
+        self.verbose = kwargs.get('verbose', True)
 
         #necesitamos que esten bien los parametros
         if not (self.accion and self.tiempo_entrada and self.tiempo_accion):
@@ -19,7 +20,8 @@ class Proceso:
         return f'PID: [{self.pid}] ACCION [{self.accion}] T0 [{self.tiempo_entrada}] TA [{self.tiempo_accion}]'
 
     def log(self, txt):
-        print(f'[{datetime.datetime.now()}] - PID {self.pid} - {txt}')
+        if self.verbose:
+            print(f'[{datetime.datetime.now()}] - PID {self.pid} - {txt}')
         
     def realizar_accion(self, recurso):
         self.log('Inicio')
