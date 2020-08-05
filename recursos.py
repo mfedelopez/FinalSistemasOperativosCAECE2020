@@ -59,7 +59,7 @@ class Recurso:
         
     def puedo_ejecutar_proceso(self, proceso):
         # accion = leer
-        if proceso.accion in ['Lectura']:
+        if proceso.accion in ['L']:
              #condiciones para poder ejecutar un proceso lector:
              #1-no hay otro escritor ejecutandose actualmente (mutex_lectura)
              #2-tengo los recursos que necesito
@@ -70,7 +70,7 @@ class Recurso:
                  #enumeramos los errores que pueden llegar a darse, para poder logear mas lindo
                  error = self.determinar_error_lectura(proceso)
                  return False, f'{error}'
-        elif proceso.accion in ['Escritura']:
+        elif proceso.accion in ['E']:
             #condiciones para poder ejecutar un proceso escritor:
             #1-no hay otro escritor esperando (mutex_interrupcion)
             #2-no hay lectores ejecutandose actualmente
@@ -82,6 +82,8 @@ class Recurso:
                 error = self.determinar_error_escritura()
                 return False, f'{error}'
         else:
+            print(f'RECURSO -> ACCION INDEFINIDA {proceso.accion}')
+            print('El proceso va a levantar una excepcion y cortar el flujo de la simulacion, se supone que hay que construir bien los objetos')
             raise Exception(f'RECURSO -> ACCION INDEFINIDA {proceso.accion}')
             
 
