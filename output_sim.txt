@@ -509,3 +509,454 @@
 [2020-08-06 19:49:20.418012] - PID 3 - Liberando 100 recursos ...
 [2020-08-06 19:49:20.425006] - PID 3 - Fin
 [2020-08-06 19:49:20.432002] Simulador -- ciclo 7 - Proceso 3 terminado ...
+[2020-08-06 19:53:02.930080] Aplicacion -- Iniciando consola interactiva ...
+[2020-08-06 19:53:02.937073] Aplicacion -- Comandos: 
+[2020-08-06 19:53:02.943072] Aplicacion -- AGREGAR PROCESO: : Comando para agregar procesos a la cola de espera de la simulacion
+[2020-08-06 19:53:02.950068] Aplicacion -- EXIT: Salir del proceso
+[2020-08-06 19:53:02.956062] Aplicacion -- LISTO: Terminar la carga de procesos en la simulacion
+[2020-08-06 19:53:02.962060] Aplicacion -- ESTADO: Revisar estados de las colas y la simulacion
+[2020-08-06 19:53:06.630489] Aplicacion -- 
+[2020-08-06 19:53:06.636484] Aplicacion -- Formato:
+[2020-08-06 19:53:06.642480] Aplicacion -- accion: "L/E" - Tipo de proceso - Lectura o Escritura)
+[2020-08-06 19:53:06.648476] Aplicacion -- tiempo_accion: Cantidad de segundos que va a retener un recurso un proceso
+[2020-08-06 19:53:06.654473] Aplicacion -- tiempo_entrada: Tiempo (ciclo) en el que el proceso entra a la cola de espera. Si no es definido, es T+1 del ultimo proceso de la cola
+[2020-08-06 19:53:06.660468] Aplicacion -- pid: id del proceso, si no es ninguno se le asigna uno random
+[2020-08-06 19:53:06.666464] Aplicacion -- Ingresar separando con comas ...
+[2020-08-06 19:53:16.189851] Aplicacion -- Se ha ingresado correctamente proceso pid: 500 ...
+[2020-08-06 19:53:16.196845] Aplicacion -- Ingrese siguiente proceso a continuacion o enter para terminar de cargar procesos ...
+[2020-08-06 19:53:29.637960] Aplicacion -- Se ha ingresado correctamente proceso pid: 501 ...
+[2020-08-06 19:53:29.645310] Aplicacion -- Ingrese siguiente proceso a continuacion o enter para terminar de cargar procesos ...
+[2020-08-06 19:53:39.093265] Aplicacion -- Se ha ingresado correctamente proceso pid: 600 ...
+[2020-08-06 19:53:39.100258] Aplicacion -- Ingrese siguiente proceso a continuacion o enter para terminar de cargar procesos ...
+[2020-08-06 19:53:39.685907] Aplicacion -- Comandos: 
+[2020-08-06 19:53:39.691904] Aplicacion -- AGREGAR PROCESO: : Comando para agregar procesos a la cola de espera de la simulacion
+[2020-08-06 19:53:39.697900] Aplicacion -- EXIT: Salir del proceso
+[2020-08-06 19:53:39.703895] Aplicacion -- LISTO: Terminar la carga de procesos en la simulacion
+[2020-08-06 19:53:39.709890] Aplicacion -- ESTADO: Revisar estados de las colas y la simulacion
+[2020-08-06 19:53:40.653112] Aplicacion -- Se terminaron de cargar los procesos
+[2020-08-06 19:53:40.660104] Aplicacion -- Finaliza consola interactiva - 3 proceso/s a ingresar ...
+[2020-08-06 19:53:40.666101] Aplicacion -- Detalle de procesos a ingresar: 
+[2020-08-06 19:53:40.672096] Aplicacion -- ===================================================================================
+[2020-08-06 19:53:40.678609] Aplicacion -- PID: [500] ACCION [E] T0 [1] TA [30]
+[2020-08-06 19:53:40.684609] Aplicacion -- PID: [501] ACCION [L] T0 [2] TA [10]
+[2020-08-06 19:53:40.690608] Aplicacion -- PID: [600] ACCION [E] T0 [2] TA [15]
+[2020-08-06 19:53:40.696604] Aplicacion -- ===================================================================================
+[2020-08-06 19:53:40.702600] Aplicacion -- La aplicacion esta lista para empezar ...
+[2020-08-06 19:53:40.708597] Aplicacion -- Iniciando simulacion en modo multithreading (simulacion en vivo)
+[2020-08-06 19:53:40.714590] Simulador -- ciclo 0 - inicio
+[2020-08-06 19:53:40.725585] Simulador -- ciclo 0 - Hay 3 proceso/s en la cola de espera
+[2020-08-06 19:53:40.731581] Simulador -- ciclo 0 - Todavia no puedo ejecutar proceso de la cola de espera
+[2020-08-06 19:53:40.737577] Simulador -- ciclo 0 - PID [500] T Entrada [1]
+[2020-08-06 19:53:40.746572] Simulador -- ciclo 0 - fin
+[2020-08-06 19:53:45.759255] Simulador -- ciclo 1 - inicio
+[2020-08-06 19:53:45.765253] Simulador -- ciclo 1 - Hay 3 proceso/s en la cola de espera
+[2020-08-06 19:53:45.772247] Simulador -- ciclo 1 - Sale de cola de espera -> PID: [500] ACCION [E] T0 [1] TA [30]
+[2020-08-06 19:53:45.778247] Simulador -- ciclo 1 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-08-06 19:53:45.784240] Simulador -- ciclo 1 - Primer DB disponible encontrada, nombre: [RECURSO_db_0] cantidad_recursos [10000] cantidad_lecturas [0]
+[2020-08-06 19:53:45.790254] Simulador -- ciclo 1 - Puedo ejecutar proceso actual
+[2020-08-06 19:53:45.797231] - PID 500 - Inicio
+[2020-08-06 19:53:45.800178] Simulador -- ciclo 1 - Todavia no puedo ejecutar proceso de la cola de espera
+[2020-08-06 19:53:45.800178] Simulador -- ciclo 1 - PID [501] T Entrada [2]
+[2020-08-06 19:53:45.801148] Simulador -- ciclo 1 - fin
+[2020-08-06 19:53:45.806145] - PID 500 - Tomando mutex escritura ...
+[2020-08-06 19:53:45.812142] - PID 500 - Escribiendo ...
+[2020-08-06 19:53:50.802473] Simulador -- ciclo 2 - inicio
+[2020-08-06 19:53:50.809471] Simulador -- ciclo 2 - Hay 2 proceso/s en la cola de espera
+[2020-08-06 19:53:50.815559] Simulador -- ciclo 2 - Sale de cola de espera -> PID: [501] ACCION [L] T0 [2] TA [10]
+[2020-08-06 19:53:50.821558] Simulador -- ciclo 2 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-08-06 19:53:50.828551] Simulador -- ciclo 2 - No puedo ejecutar actualmente, agrego a cola de procesos
+[2020-08-06 19:53:50.834793] Simulador -- ciclo 2 - Razon: mutex de escritura activado 
+[2020-08-06 19:53:50.841789] Simulador -- ciclo 2 - Todavia no puedo ejecutar proceso de la cola de espera
+[2020-08-06 19:53:50.847786] Simulador -- ciclo 2 - PID [600] T Entrada [2]
+[2020-08-06 19:53:50.853698] Simulador -- ciclo 2 - fin
+[2020-08-06 19:53:55.860153] Simulador -- ciclo 3 - inicio
+[2020-08-06 19:53:55.866152] Simulador -- ciclo 3 - Hay 1 proceso/s en la cola de espera
+[2020-08-06 19:53:55.873148] Simulador -- ciclo 3 - Tiempo de entrada > ciclo, lo paso a la cola de procesos pendientes
+[2020-08-06 19:53:55.879144] Simulador -- ciclo 3 - proximo proceso escritor tiene prioridad
+[2020-08-06 19:53:55.886141] Simulador -- ciclo 3 - PID: [600] ACCION [E] T0 [2] TA [15]
+[2020-08-06 19:53:55.892138] Simulador -- ciclo 3 - Hay 2 proceso/s esperando que se liberen recursos
+[2020-08-06 19:53:55.898960] Simulador -- ciclo 3 - Cola de procesos pendientes [501, 600]
+[2020-08-06 19:53:55.905683] Simulador -- ciclo 3 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-08-06 19:53:55.912680] Simulador -- ciclo 3 - Todavia no puedo ejecutar proceso pendiente
+[2020-08-06 19:53:55.918675] Simulador -- ciclo 3 - Razon: todavia hay un proceso escribiendo 
+[2020-08-06 19:53:55.925671] Simulador -- ciclo 3 - fin
+[2020-08-06 19:54:00.933387] Simulador -- ciclo 4 - inicio
+[2020-08-06 19:54:00.939381] Simulador -- ciclo 4 - No hay procesos en la cola de espera
+[2020-08-06 19:54:00.946377] Simulador -- ciclo 4 - proximo proceso escritor tiene prioridad
+[2020-08-06 19:54:00.952372] Simulador -- ciclo 4 - PID: [600] ACCION [E] T0 [2] TA [15]
+[2020-08-06 19:54:00.959093] Simulador -- ciclo 4 - Hay 2 proceso/s esperando que se liberen recursos
+[2020-08-06 19:54:00.964889] Simulador -- ciclo 4 - Cola de procesos pendientes [501, 600]
+[2020-08-06 19:54:00.970887] Simulador -- ciclo 4 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-08-06 19:54:00.976882] Simulador -- ciclo 4 - Todavia no puedo ejecutar proceso pendiente
+[2020-08-06 19:54:00.982878] Simulador -- ciclo 4 - Razon: todavia hay un proceso escribiendo 
+[2020-08-06 19:54:00.988874] Simulador -- ciclo 4 - fin
+[2020-08-06 19:54:05.996063] Simulador -- ciclo 5 - inicio
+[2020-08-06 19:54:06.001947] Simulador -- ciclo 5 - No hay procesos en la cola de espera
+[2020-08-06 19:54:06.007943] Simulador -- ciclo 5 - proximo proceso escritor tiene prioridad
+[2020-08-06 19:54:06.013940] Simulador -- ciclo 5 - PID: [600] ACCION [E] T0 [2] TA [15]
+[2020-08-06 19:54:06.020935] Simulador -- ciclo 5 - Hay 2 proceso/s esperando que se liberen recursos
+[2020-08-06 19:54:06.026931] Simulador -- ciclo 5 - Cola de procesos pendientes [501, 600]
+[2020-08-06 19:54:06.032927] Simulador -- ciclo 5 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-08-06 19:54:06.038922] Simulador -- ciclo 5 - Todavia no puedo ejecutar proceso pendiente
+[2020-08-06 19:54:06.044919] Simulador -- ciclo 5 - Razon: todavia hay un proceso escribiendo 
+[2020-08-06 19:54:06.050915] Simulador -- ciclo 5 - fin
+[2020-08-06 19:54:11.057842] Simulador -- ciclo 6 - inicio
+[2020-08-06 19:54:11.064838] Simulador -- ciclo 6 - No hay procesos en la cola de espera
+[2020-08-06 19:54:11.070836] Simulador -- ciclo 6 - proximo proceso escritor tiene prioridad
+[2020-08-06 19:54:11.076831] Simulador -- ciclo 6 - PID: [600] ACCION [E] T0 [2] TA [15]
+[2020-08-06 19:54:11.083827] Simulador -- ciclo 6 - Hay 2 proceso/s esperando que se liberen recursos
+[2020-08-06 19:54:11.090824] Simulador -- ciclo 6 - Cola de procesos pendientes [501, 600]
+[2020-08-06 19:54:11.096817] Simulador -- ciclo 6 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-08-06 19:54:11.102815] Simulador -- ciclo 6 - Todavia no puedo ejecutar proceso pendiente
+[2020-08-06 19:54:11.108810] Simulador -- ciclo 6 - Razon: todavia hay un proceso escribiendo 
+[2020-08-06 19:54:11.115805] Simulador -- ciclo 6 - fin
+[2020-08-06 19:54:15.818465] - PID 500 - Termino la escritura ...
+[2020-08-06 19:54:15.824467] - PID 500 - Liberando mutex escritura ...
+[2020-08-06 19:54:15.831167] - PID 500 - Fin
+[2020-08-06 19:54:15.837163] Simulador -- ciclo 7 - Proceso 500 terminado ...
+[2020-08-06 19:54:16.123708] Simulador -- ciclo 7 - inicio
+[2020-08-06 19:54:16.129697] Simulador -- ciclo 7 - No hay procesos en la cola de espera
+[2020-08-06 19:54:16.136695] Simulador -- ciclo 7 - proximo proceso escritor tiene prioridad
+[2020-08-06 19:54:16.143689] Simulador -- ciclo 7 - PID: [600] ACCION [E] T0 [2] TA [15]
+[2020-08-06 19:54:16.150685] Simulador -- ciclo 7 - Hay 2 proceso/s esperando que se liberen recursos
+[2020-08-06 19:54:16.156681] Simulador -- ciclo 7 - Cola de procesos pendientes [501, 600]
+[2020-08-06 19:54:16.162797] Simulador -- ciclo 7 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-08-06 19:54:16.168791] Simulador -- ciclo 7 - Primer DB disponible encontrada, nombre: [RECURSO_db_0] cantidad_recursos [10000] cantidad_lecturas [0]
+[2020-08-06 19:54:16.175732] Simulador -- ciclo 7 - Puedo ejecutar proceso pendiente
+[2020-08-06 19:54:16.181728] - PID 501 - Inicio
+[2020-08-06 19:54:16.184726] Simulador -- ciclo 7 - fin
+[2020-08-06 19:54:16.191210] - PID 501 - Tomando 100 recursos ...
+[2020-08-06 19:54:16.197217] - PID 501 - Leyendo ...
+[2020-08-06 19:54:21.186604] Simulador -- ciclo 8 - inicio
+[2020-08-06 19:54:21.192593] Simulador -- ciclo 8 - No hay procesos en la cola de espera
+[2020-08-06 19:54:21.198590] Simulador -- ciclo 8 - proximo proceso escritor tiene prioridad
+[2020-08-06 19:54:21.205586] Simulador -- ciclo 8 - PID: [600] ACCION [E] T0 [2] TA [15]
+[2020-08-06 19:54:21.211582] Simulador -- ciclo 8 - Hay 1 proceso/s esperando que se liberen recursos
+[2020-08-06 19:54:21.218577] Simulador -- ciclo 8 - Cola de procesos pendientes [600]
+[2020-08-06 19:54:21.224485] Simulador -- ciclo 8 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-08-06 19:54:21.231478] Simulador -- ciclo 8 - Todavia no puedo ejecutar proceso pendiente
+[2020-08-06 19:54:21.237477] Simulador -- ciclo 8 - Razon: todavia hay procesos leyendo 
+[2020-08-06 19:54:21.243472] Simulador -- ciclo 8 - fin
+[2020-08-06 19:54:26.204113] - PID 501 - Termino la lectura ...
+[2020-08-06 19:54:26.210109] - PID 501 - Liberando 100 recursos ...
+[2020-08-06 19:54:26.216106] - PID 501 - Fin
+[2020-08-06 19:54:26.222103] Simulador -- ciclo 9 - Proceso 501 terminado ...
+[2020-08-06 19:54:26.252269] Simulador -- ciclo 9 - inicio
+[2020-08-06 19:54:26.257973] Simulador -- ciclo 9 - No hay procesos en la cola de espera
+[2020-08-06 19:54:26.263972] Simulador -- ciclo 9 - proximo proceso escritor tiene prioridad
+[2020-08-06 19:54:26.270987] Simulador -- ciclo 9 - PID: [600] ACCION [E] T0 [2] TA [15]
+[2020-08-06 19:54:26.276962] Simulador -- ciclo 9 - Hay 1 proceso/s esperando que se liberen recursos
+[2020-08-06 19:54:26.282960] Simulador -- ciclo 9 - Cola de procesos pendientes [600]
+[2020-08-06 19:54:26.288954] Simulador -- ciclo 9 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-08-06 19:54:26.294953] Simulador -- ciclo 9 - Primer DB disponible encontrada, nombre: [RECURSO_db_0] cantidad_recursos [10000] cantidad_lecturas [0]
+[2020-08-06 19:54:26.300950] Simulador -- ciclo 9 - Puedo ejecutar proceso pendiente
+[2020-08-06 19:54:26.307944] - PID 600 - Inicio
+[2020-08-06 19:54:26.309944] Simulador -- ciclo 9 - fin
+[2020-08-06 19:54:26.316185] - PID 600 - Tomando mutex escritura ...
+[2020-08-06 19:54:26.323180] - PID 600 - Escribiendo ...
+[2020-08-06 19:54:31.311447] Simulador -- ciclo 10 - inicio
+[2020-08-06 19:54:31.321444] Simulador -- ciclo 10 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 19:54:36.331606] Simulador -- ciclo 11 - inicio
+[2020-08-06 19:54:36.338602] Simulador -- ciclo 11 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 19:54:41.329534] - PID 600 - Termino la escritura ...
+[2020-08-06 19:54:41.336532] - PID 600 - Liberando mutex escritura ...
+[2020-08-06 19:54:41.342530] - PID 600 - Fin
+[2020-08-06 19:54:41.347526] Simulador -- ciclo 12 - inicio
+[2020-08-06 19:54:41.347526] Simulador -- ciclo 12 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 19:54:41.348528] Simulador -- ciclo 12 - Proceso 600 terminado ...
+[2020-08-06 19:58:19.727528] Aplicacion -- Iniciando consola interactiva ...
+[2020-08-06 19:58:19.734523] Aplicacion -- Comandos: 
+[2020-08-06 19:58:19.741519] Aplicacion -- AGREGAR PROCESO: : Comando para agregar procesos a la cola de espera de la simulacion
+[2020-08-06 19:58:19.748514] Aplicacion -- EXIT: Salir del proceso
+[2020-08-06 19:58:19.754511] Aplicacion -- LISTO: Terminar la carga de procesos en la simulacion
+[2020-08-06 19:58:19.761507] Aplicacion -- ESTADO: Revisar estados de las colas y la simulacion
+[2020-08-06 19:58:34.484079] Aplicacion -- 
+[2020-08-06 19:58:34.491075] Aplicacion -- Formato:
+[2020-08-06 19:58:34.498071] Aplicacion -- accion: "L/E" - Tipo de proceso - Lectura o Escritura)
+[2020-08-06 19:58:34.505066] Aplicacion -- tiempo_accion: Cantidad de segundos que va a retener un recurso un proceso
+[2020-08-06 19:58:34.511062] Aplicacion -- tiempo_entrada: Tiempo (ciclo) en el que el proceso entra a la cola de espera. Si no es definido, es T+1 del ultimo proceso de la cola
+[2020-08-06 19:58:34.518056] Aplicacion -- pid: id del proceso, si no es ninguno se le asigna uno random
+[2020-08-06 19:58:34.524054] Aplicacion -- Ingresar separando con comas ...
+[2020-08-06 19:58:44.459888] Aplicacion -- Se ha ingresado correctamente proceso pid: 1 ...
+[2020-08-06 19:58:44.465885] Aplicacion -- Ingrese siguiente proceso a continuacion o enter para terminar de cargar procesos ...
+[2020-08-06 19:58:50.187389] Aplicacion -- Se ha ingresado correctamente proceso pid: 1 ...
+[2020-08-06 19:58:50.193384] Aplicacion -- Ingrese siguiente proceso a continuacion o enter para terminar de cargar procesos ...
+[2020-08-06 19:58:52.299824] Aplicacion -- Se ha ingresado correctamente proceso pid: 1 ...
+[2020-08-06 19:58:52.305820] Aplicacion -- Ingrese siguiente proceso a continuacion o enter para terminar de cargar procesos ...
+[2020-08-06 19:58:54.707310] Aplicacion -- Comandos: 
+[2020-08-06 19:58:54.714403] Aplicacion -- AGREGAR PROCESO: : Comando para agregar procesos a la cola de espera de la simulacion
+[2020-08-06 19:58:54.720384] Aplicacion -- EXIT: Salir del proceso
+[2020-08-06 19:58:54.726382] Aplicacion -- LISTO: Terminar la carga de procesos en la simulacion
+[2020-08-06 19:58:54.732379] Aplicacion -- ESTADO: Revisar estados de las colas y la simulacion
+[2020-08-06 19:58:56.307223] Aplicacion -- Se terminaron de cargar los procesos
+[2020-08-06 19:58:56.314220] Aplicacion -- Finaliza consola interactiva - 3 proceso/s a ingresar ...
+[2020-08-06 19:58:56.320216] Aplicacion -- Detalle de procesos a ingresar: 
+[2020-08-06 19:58:56.327213] Aplicacion -- ===================================================================================
+[2020-08-06 19:58:56.333208] Aplicacion -- PID: [1] ACCION [E] T0 [1] TA [20]
+[2020-08-06 19:58:56.339206] Aplicacion -- PID: [1] ACCION [L] T0 [1] TA [5]
+[2020-08-06 19:58:56.345202] Aplicacion -- PID: [1] ACCION [E] T0 [1] TA [5]
+[2020-08-06 19:58:56.351197] Aplicacion -- ===================================================================================
+[2020-08-06 19:58:56.357805] Aplicacion -- La aplicacion esta lista para empezar ...
+[2020-08-06 19:58:56.363800] Aplicacion -- Iniciando simulacion en modo multithreading (simulacion en vivo)
+[2020-08-06 19:58:56.370797] Simulador -- ciclo 0 - inicio
+[2020-08-06 19:58:56.379791] Simulador -- ciclo 0 - Hay 3 proceso/s en la cola de espera
+[2020-08-06 19:58:56.385786] Simulador -- ciclo 0 - Todavia no puedo ejecutar proceso de la cola de espera
+[2020-08-06 19:58:56.391784] Simulador -- ciclo 0 - PID [1] T Entrada [1]
+[2020-08-06 19:58:56.397779] Simulador -- ciclo 0 - fin
+[2020-08-06 19:59:01.406776] Simulador -- ciclo 1 - inicio
+[2020-08-06 19:59:01.412767] Simulador -- ciclo 1 - Hay 3 proceso/s en la cola de espera
+[2020-08-06 19:59:01.419762] Simulador -- ciclo 1 - Sale de cola de espera -> PID: [1] ACCION [E] T0 [1] TA [20]
+[2020-08-06 19:59:01.426767] Simulador -- ciclo 1 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-08-06 19:59:01.432755] Simulador -- ciclo 1 - Primer DB disponible encontrada, nombre: [RECURSO_db_0] cantidad_recursos [10000] cantidad_lecturas [0]
+[2020-08-06 19:59:01.438751] Simulador -- ciclo 1 - Puedo ejecutar proceso actual
+[2020-08-06 19:59:01.447748] Simulador -- ciclo 1 - fin
+[2020-08-06 19:59:01.444748] - PID 1 - Inicio
+[2020-08-06 19:59:01.447748] - PID 1 - Tomando mutex escritura ...
+[2020-08-06 19:59:01.448745] - PID 1 - Escribiendo ...
+[2020-08-06 19:59:06.454958] Simulador -- ciclo 2 - inicio
+[2020-08-06 19:59:06.462952] Simulador -- ciclo 2 - Hay 2 proceso/s en la cola de espera
+[2020-08-06 19:59:06.469947] Simulador -- ciclo 2 - Tiempo de entrada > ciclo, lo paso a la cola de procesos pendientes
+[2020-08-06 19:59:06.482938] Simulador -- ciclo 2 - Hay 1 proceso/s esperando que se liberen recursos
+[2020-08-06 19:59:06.499928] Simulador -- ciclo 2 - Cola de procesos pendientes [1]
+[2020-08-06 19:59:06.506924] Simulador -- ciclo 2 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-08-06 19:59:06.517917] Simulador -- ciclo 2 - Todavia no puedo ejecutar proceso pendiente
+[2020-08-06 19:59:06.524912] Simulador -- ciclo 2 - Razon: mutex de escritura activado 
+[2020-08-06 19:59:06.536905] Simulador -- ciclo 2 - fin
+[2020-08-06 19:59:11.547896] Simulador -- ciclo 3 - inicio
+[2020-08-06 19:59:11.553887] Simulador -- ciclo 3 - Hay 1 proceso/s en la cola de espera
+[2020-08-06 19:59:11.560881] Simulador -- ciclo 3 - Tiempo de entrada > ciclo, lo paso a la cola de procesos pendientes
+[2020-08-06 19:59:11.566878] Simulador -- ciclo 3 - proximo proceso escritor tiene prioridad
+[2020-08-06 19:59:11.574877] Simulador -- ciclo 3 - PID: [1] ACCION [E] T0 [1] TA [5]
+[2020-08-06 19:59:11.583868] Simulador -- ciclo 3 - Hay 2 proceso/s esperando que se liberen recursos
+[2020-08-06 19:59:11.589864] Simulador -- ciclo 3 - Cola de procesos pendientes [1, 1]
+[2020-08-06 19:59:11.596860] Simulador -- ciclo 3 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-08-06 19:59:11.602856] Simulador -- ciclo 3 - Todavia no puedo ejecutar proceso pendiente
+[2020-08-06 19:59:11.608852] Simulador -- ciclo 3 - Razon: todavia hay un proceso escribiendo 
+[2020-08-06 19:59:11.616846] Simulador -- ciclo 3 - fin
+[2020-08-06 19:59:16.623763] Simulador -- ciclo 4 - inicio
+[2020-08-06 19:59:16.630754] Simulador -- ciclo 4 - No hay procesos en la cola de espera
+[2020-08-06 19:59:16.638750] Simulador -- ciclo 4 - proximo proceso escritor tiene prioridad
+[2020-08-06 19:59:16.648748] Simulador -- ciclo 4 - PID: [1] ACCION [E] T0 [1] TA [5]
+[2020-08-06 19:59:16.655662] Simulador -- ciclo 4 - Hay 2 proceso/s esperando que se liberen recursos
+[2020-08-06 19:59:16.661658] Simulador -- ciclo 4 - Cola de procesos pendientes [1, 1]
+[2020-08-06 19:59:16.668654] Simulador -- ciclo 4 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-08-06 19:59:16.674651] Simulador -- ciclo 4 - Todavia no puedo ejecutar proceso pendiente
+[2020-08-06 19:59:16.681645] Simulador -- ciclo 4 - Razon: todavia hay un proceso escribiendo 
+[2020-08-06 19:59:16.689642] Simulador -- ciclo 4 - fin
+[2020-08-06 19:59:21.450500] - PID 1 - Termino la escritura ...
+[2020-08-06 19:59:21.456500] - PID 1 - Liberando mutex escritura ...
+[2020-08-06 19:59:21.463496] - PID 1 - Fin
+[2020-08-06 19:59:21.470492] Simulador -- ciclo 5 - Proceso 1 terminado ...
+[2020-08-06 19:59:21.697587] Simulador -- ciclo 5 - inicio
+[2020-08-06 19:59:21.703584] Simulador -- ciclo 5 - No hay procesos en la cola de espera
+[2020-08-06 19:59:21.709579] Simulador -- ciclo 5 - proximo proceso escritor tiene prioridad
+[2020-08-06 19:59:21.717573] Simulador -- ciclo 5 - PID: [1] ACCION [E] T0 [1] TA [5]
+[2020-08-06 19:59:21.723571] Simulador -- ciclo 5 - Hay 2 proceso/s esperando que se liberen recursos
+[2020-08-06 19:59:21.730566] Simulador -- ciclo 5 - Cola de procesos pendientes [1, 1]
+[2020-08-06 19:59:21.737560] Simulador -- ciclo 5 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-08-06 19:59:21.743560] Simulador -- ciclo 5 - Primer DB disponible encontrada, nombre: [RECURSO_db_0] cantidad_recursos [10000] cantidad_lecturas [0]
+[2020-08-06 19:59:21.750553] Simulador -- ciclo 5 - Puedo ejecutar proceso pendiente
+[2020-08-06 19:59:21.757548] - PID 1 - Inicio
+[2020-08-06 19:59:21.759552] Simulador -- ciclo 5 - fin
+[2020-08-06 19:59:21.767543] - PID 1 - Tomando 100 recursos ...
+[2020-08-06 19:59:21.773541] - PID 1 - Leyendo ...
+[2020-08-06 19:59:26.761823] Simulador -- ciclo 6 - inicio
+[2020-08-06 19:59:26.767820] Simulador -- ciclo 6 - No hay procesos en la cola de espera
+[2020-08-06 19:59:26.773814] Simulador -- ciclo 6 - proximo proceso escritor tiene prioridad
+[2020-08-06 19:59:26.780810] Simulador -- ciclo 6 - PID: [1] ACCION [E] T0 [1] TA [5]
+[2020-08-06 19:59:26.781812] - PID 1 - Termino la lectura ...
+[2020-08-06 19:59:26.781812] - PID 1 - Liberando 100 recursos ...
+[2020-08-06 19:59:26.781812] - PID 1 - Fin
+[2020-08-06 19:59:26.782810] Simulador -- ciclo 6 - Proceso 1 terminado ...
+[2020-08-06 19:59:26.786808] Simulador -- ciclo 6 - Hay 1 proceso/s esperando que se liberen recursos
+[2020-08-06 19:59:26.792804] Simulador -- ciclo 6 - Cola de procesos pendientes [1]
+[2020-08-06 19:59:26.799799] Simulador -- ciclo 6 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-08-06 19:59:26.805796] Simulador -- ciclo 6 - Primer DB disponible encontrada, nombre: [RECURSO_db_0] cantidad_recursos [10000] cantidad_lecturas [0]
+[2020-08-06 19:59:26.811792] Simulador -- ciclo 6 - Puedo ejecutar proceso pendiente
+[2020-08-06 19:59:26.818787] - PID 1 - Inicio
+[2020-08-06 19:59:26.820787] Simulador -- ciclo 6 - fin
+[2020-08-06 19:59:26.821785] - PID 1 - Tomando mutex escritura ...
+[2020-08-06 19:59:26.821785] - PID 1 - Escribiendo ...
+[2020-08-06 19:59:31.823337] - PID 1 - Termino la escritura ...
+[2020-08-06 19:59:31.829332] Simulador -- ciclo 7 - inicio
+[2020-08-06 19:59:31.829332] Simulador -- ciclo 7 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 19:59:31.832109] - PID 1 - Liberando mutex escritura ...
+[2020-08-06 19:59:31.838110] - PID 1 - Fin
+[2020-08-06 19:59:31.845104] Simulador -- ciclo 8 - Proceso 1 terminado ...
+[2020-08-06 19:59:36.831626] Simulador -- ciclo 8 - inicio
+[2020-08-06 19:59:36.837621] Simulador -- ciclo 8 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 19:59:41.845749] Simulador -- ciclo 9 - inicio
+[2020-08-06 19:59:41.851746] Simulador -- ciclo 9 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 19:59:46.859167] Simulador -- ciclo 10 - inicio
+[2020-08-06 19:59:46.866161] Simulador -- ciclo 10 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 19:59:51.873316] Simulador -- ciclo 11 - inicio
+[2020-08-06 19:59:51.880310] Simulador -- ciclo 11 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 19:59:56.887165] Simulador -- ciclo 12 - inicio
+[2020-08-06 19:59:56.893160] Simulador -- ciclo 12 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:00:01.902162] Simulador -- ciclo 13 - inicio
+[2020-08-06 20:00:01.909158] Simulador -- ciclo 13 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:00:06.920549] Simulador -- ciclo 14 - inicio
+[2020-08-06 20:00:06.927545] Simulador -- ciclo 14 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:00:11.935337] Simulador -- ciclo 15 - inicio
+[2020-08-06 20:00:11.941330] Simulador -- ciclo 15 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:00:16.949741] Simulador -- ciclo 16 - inicio
+[2020-08-06 20:00:16.956469] Simulador -- ciclo 16 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:00:21.963470] Simulador -- ciclo 17 - inicio
+[2020-08-06 20:00:21.970455] Simulador -- ciclo 17 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:00:26.977638] Simulador -- ciclo 18 - inicio
+[2020-08-06 20:00:26.983641] Simulador -- ciclo 18 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:00:31.991680] Simulador -- ciclo 19 - inicio
+[2020-08-06 20:00:31.999674] Simulador -- ciclo 19 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:00:37.008023] Simulador -- ciclo 20 - inicio
+[2020-08-06 20:00:37.015013] Simulador -- ciclo 20 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:00:42.022404] Simulador -- ciclo 21 - inicio
+[2020-08-06 20:00:42.030402] Simulador -- ciclo 21 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:00:47.037152] Simulador -- ciclo 22 - inicio
+[2020-08-06 20:00:47.044145] Simulador -- ciclo 22 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:00:52.051748] Simulador -- ciclo 23 - inicio
+[2020-08-06 20:00:52.057748] Simulador -- ciclo 23 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:00:57.065662] Simulador -- ciclo 24 - inicio
+[2020-08-06 20:00:57.071651] Simulador -- ciclo 24 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:01:02.080259] Simulador -- ciclo 25 - inicio
+[2020-08-06 20:01:02.087251] Simulador -- ciclo 25 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:01:07.093891] Simulador -- ciclo 26 - inicio
+[2020-08-06 20:01:07.100885] Simulador -- ciclo 26 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:01:12.107620] Simulador -- ciclo 27 - inicio
+[2020-08-06 20:01:12.114612] Simulador -- ciclo 27 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:01:17.122733] Simulador -- ciclo 28 - inicio
+[2020-08-06 20:01:17.129724] Simulador -- ciclo 28 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:01:22.136651] Simulador -- ciclo 29 - inicio
+[2020-08-06 20:01:22.142646] Simulador -- ciclo 29 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:01:27.150496] Simulador -- ciclo 30 - inicio
+[2020-08-06 20:01:27.158493] Simulador -- ciclo 30 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:01:32.167100] Simulador -- ciclo 31 - inicio
+[2020-08-06 20:01:32.174089] Simulador -- ciclo 31 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:01:37.182788] Simulador -- ciclo 32 - inicio
+[2020-08-06 20:01:37.188782] Simulador -- ciclo 32 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:01:42.196273] Simulador -- ciclo 33 - inicio
+[2020-08-06 20:01:42.203268] Simulador -- ciclo 33 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:01:47.210536] Simulador -- ciclo 34 - inicio
+[2020-08-06 20:01:47.217526] Simulador -- ciclo 34 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:01:52.225266] Simulador -- ciclo 35 - inicio
+[2020-08-06 20:01:52.231253] Simulador -- ciclo 35 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:01:57.239707] Simulador -- ciclo 36 - inicio
+[2020-08-06 20:01:57.246607] Simulador -- ciclo 36 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:02:02.253355] Simulador -- ciclo 37 - inicio
+[2020-08-06 20:02:02.259350] Simulador -- ciclo 37 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:02:07.268246] Simulador -- ciclo 38 - inicio
+[2020-08-06 20:02:07.274240] Simulador -- ciclo 38 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:02:12.281348] Simulador -- ciclo 39 - inicio
+[2020-08-06 20:02:12.288345] Simulador -- ciclo 39 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:02:17.295679] Simulador -- ciclo 40 - inicio
+[2020-08-06 20:02:17.302675] Simulador -- ciclo 40 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:02:22.309707] Simulador -- ciclo 41 - inicio
+[2020-08-06 20:02:22.319701] Simulador -- ciclo 41 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:06:21.335888] Aplicacion -- Iniciando consola interactiva ...
+[2020-08-06 20:06:21.342884] Aplicacion -- Comandos: 
+[2020-08-06 20:06:21.348882] Aplicacion -- AGREGAR PROCESO: : Comando para agregar procesos a la cola de espera de la simulacion
+[2020-08-06 20:06:21.354877] Aplicacion -- EXIT: Salir del proceso
+[2020-08-06 20:06:21.361872] Aplicacion -- LISTO: Terminar la carga de procesos en la simulacion
+[2020-08-06 20:06:21.367869] Aplicacion -- ESTADO: Revisar estados de las colas y la simulacion
+[2020-08-06 20:06:26.151896] Aplicacion -- 
+[2020-08-06 20:06:26.158891] Aplicacion -- Formato:
+[2020-08-06 20:06:26.164887] Aplicacion -- accion: "L/E" - Tipo de proceso - Lectura o Escritura)
+[2020-08-06 20:06:26.170884] Aplicacion -- tiempo_accion: Cantidad de segundos que va a retener un recurso un proceso
+[2020-08-06 20:06:26.176879] Aplicacion -- tiempo_entrada: Tiempo (ciclo) en el que el proceso entra a la cola de espera. Si no es definido, es T+1 del ultimo proceso de la cola
+[2020-08-06 20:06:26.182876] Aplicacion -- pid: id del proceso, si no es ninguno se le asigna uno random
+[2020-08-06 20:06:26.188871] Aplicacion -- Ingresar separando con comas ...
+[2020-08-06 20:06:35.704302] Aplicacion -- Se ha ingresado correctamente proceso pid: 100 ...
+[2020-08-06 20:06:35.711297] Aplicacion -- Ingrese siguiente proceso a continuacion o enter para terminar de cargar procesos ...
+[2020-08-06 20:06:41.816217] Aplicacion -- Se ha ingresado correctamente proceso pid: 101 ...
+[2020-08-06 20:06:41.822216] Aplicacion -- Ingrese siguiente proceso a continuacion o enter para terminar de cargar procesos ...
+[2020-08-06 20:06:49.615894] Aplicacion -- Se ha ingresado correctamente proceso pid: 103 ...
+[2020-08-06 20:06:49.623884] Aplicacion -- Ingrese siguiente proceso a continuacion o enter para terminar de cargar procesos ...
+[2020-08-06 20:06:50.327787] Aplicacion -- Comandos: 
+[2020-08-06 20:06:50.333783] Aplicacion -- AGREGAR PROCESO: : Comando para agregar procesos a la cola de espera de la simulacion
+[2020-08-06 20:06:50.340780] Aplicacion -- EXIT: Salir del proceso
+[2020-08-06 20:06:50.346776] Aplicacion -- LISTO: Terminar la carga de procesos en la simulacion
+[2020-08-06 20:06:50.353105] Aplicacion -- ESTADO: Revisar estados de las colas y la simulacion
+[2020-08-06 20:06:53.408491] Aplicacion -- Se terminaron de cargar los procesos
+[2020-08-06 20:06:53.414490] Aplicacion -- Finaliza consola interactiva - 3 proceso/s a ingresar ...
+[2020-08-06 20:06:53.420998] Aplicacion -- Detalle de procesos a ingresar: 
+[2020-08-06 20:06:53.426995] Aplicacion -- ===================================================================================
+[2020-08-06 20:06:53.433002] Aplicacion -- PID: [100] ACCION [E] T0 [1] TA [10]
+[2020-08-06 20:06:53.438985] Aplicacion -- PID: [101] ACCION [E] T0 [2] TA [10]
+[2020-08-06 20:06:53.444992] Aplicacion -- PID: [103] ACCION [L] T0 [2] TA [5]
+[2020-08-06 20:06:53.450980] Aplicacion -- ===================================================================================
+[2020-08-06 20:06:53.456974] Aplicacion -- La aplicacion esta lista para empezar ...
+[2020-08-06 20:06:53.463972] Aplicacion -- Iniciando simulacion en modo multithreading (simulacion en vivo)
+[2020-08-06 20:06:53.470967] Simulador -- ciclo 0 - inicio
+[2020-08-06 20:06:53.481152] Simulador -- ciclo 0 - Hay 3 proceso/s en la cola de espera
+[2020-08-06 20:06:53.487150] Simulador -- ciclo 0 - Todavia no puedo ejecutar proceso de la cola de espera
+[2020-08-06 20:06:53.494144] Simulador -- ciclo 0 - PID [100] T Entrada [1]
+[2020-08-06 20:06:53.500140] Simulador -- ciclo 0 - fin
+[2020-08-06 20:06:58.509544] Simulador -- ciclo 1 - inicio
+[2020-08-06 20:06:58.529529] Simulador -- ciclo 1 - Hay 3 proceso/s en la cola de espera
+[2020-08-06 20:06:58.543520] Simulador -- ciclo 1 - Sale de cola de espera -> PID: [100] ACCION [E] T0 [1] TA [10]
+[2020-08-06 20:06:58.554514] Simulador -- ciclo 1 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-08-06 20:06:58.561510] Simulador -- ciclo 1 - Primer DB disponible encontrada, nombre: [RECURSO_db_0] cantidad_recursos [10000] cantidad_lecturas [0]
+[2020-08-06 20:06:58.575501] Simulador -- ciclo 1 - Puedo ejecutar proceso actual
+[2020-08-06 20:06:58.590492] - PID 100 - Inicio
+[2020-08-06 20:06:58.592492] Simulador -- ciclo 1 - fin
+[2020-08-06 20:06:58.600606] - PID 100 - Tomando mutex escritura ...
+[2020-08-06 20:06:58.608197] - PID 100 - Escribiendo ...
+[2020-08-06 20:07:03.593943] Simulador -- ciclo 2 - inicio
+[2020-08-06 20:07:03.600931] Simulador -- ciclo 2 - Hay 2 proceso/s en la cola de espera
+[2020-08-06 20:07:03.606927] Simulador -- ciclo 2 - Sale de cola de espera -> PID: [101] ACCION [E] T0 [2] TA [10]
+[2020-08-06 20:07:03.613925] Simulador -- ciclo 2 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-08-06 20:07:03.619921] Simulador -- ciclo 2 - No puedo ejecutar actualmente, agrego a cola de procesos
+[2020-08-06 20:07:03.625915] Simulador -- ciclo 2 - Razon: todavia hay un proceso escribiendo 
+[2020-08-06 20:07:03.632911] Simulador -- ciclo 2 - fin
+[2020-08-06 20:07:08.616284] - PID 100 - Termino la escritura ...
+[2020-08-06 20:07:08.622280] - PID 100 - Liberando mutex escritura ...
+[2020-08-06 20:07:08.628277] - PID 100 - Fin
+[2020-08-06 20:07:08.635272] Simulador -- ciclo 3 - Proceso 100 terminado ...
+[2020-08-06 20:07:08.640268] Simulador -- ciclo 3 - inicio
+[2020-08-06 20:07:08.640268] Simulador -- ciclo 3 - Hay 1 proceso/s en la cola de espera
+[2020-08-06 20:07:08.641267] Simulador -- ciclo 3 - Tiempo de entrada > ciclo, lo paso a la cola de procesos pendientes
+[2020-08-06 20:07:08.647263] Simulador -- ciclo 3 - proximo proceso escritor tiene prioridad
+[2020-08-06 20:07:08.654258] Simulador -- ciclo 3 - PID: [101] ACCION [E] T0 [2] TA [10]
+[2020-08-06 20:07:08.660255] Simulador -- ciclo 3 - Hay 2 proceso/s esperando que se liberen recursos
+[2020-08-06 20:07:08.666252] Simulador -- ciclo 3 - Cola de procesos pendientes [101, 103]
+[2020-08-06 20:07:08.672248] Simulador -- ciclo 3 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-08-06 20:07:08.678244] Simulador -- ciclo 3 - Primer DB disponible encontrada, nombre: [RECURSO_db_0] cantidad_recursos [10000] cantidad_lecturas [0]
+[2020-08-06 20:07:08.685239] Simulador -- ciclo 3 - Puedo ejecutar proceso pendiente
+[2020-08-06 20:07:08.691235] - PID 101 - Inicio
+[2020-08-06 20:07:08.694233] Simulador -- ciclo 3 - fin
+[2020-08-06 20:07:08.700851] - PID 101 - Tomando mutex escritura ...
+[2020-08-06 20:07:08.706853] - PID 101 - Escribiendo ...
+[2020-08-06 20:07:13.695781] Simulador -- ciclo 4 - inicio
+[2020-08-06 20:07:13.702774] Simulador -- ciclo 4 - No hay procesos en la cola de espera
+[2020-08-06 20:07:13.709768] Simulador -- ciclo 4 - Hay 1 proceso/s esperando que se liberen recursos
+[2020-08-06 20:07:13.715838] Simulador -- ciclo 4 - Cola de procesos pendientes [103]
+[2020-08-06 20:07:13.722835] Simulador -- ciclo 4 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-08-06 20:07:13.728833] Simulador -- ciclo 4 - Todavia no puedo ejecutar proceso pendiente
+[2020-08-06 20:07:13.734827] Simulador -- ciclo 4 - Razon: mutex de escritura activado 
+[2020-08-06 20:07:13.740825] Simulador -- ciclo 4 - fin
+[2020-08-06 20:07:18.714181] - PID 101 - Termino la escritura ...
+[2020-08-06 20:07:18.721177] - PID 101 - Liberando mutex escritura ...
+[2020-08-06 20:07:18.727174] - PID 101 - Fin
+[2020-08-06 20:07:18.734171] Simulador -- ciclo 5 - Proceso 101 terminado ...
+[2020-08-06 20:07:18.748160] Simulador -- ciclo 5 - inicio
+[2020-08-06 20:07:18.754157] Simulador -- ciclo 5 - No hay procesos en la cola de espera
+[2020-08-06 20:07:18.761152] Simulador -- ciclo 5 - Hay 1 proceso/s esperando que se liberen recursos
+[2020-08-06 20:07:18.769147] Simulador -- ciclo 5 - Cola de procesos pendientes [103]
+[2020-08-06 20:07:18.776144] Simulador -- ciclo 5 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-08-06 20:07:18.782139] Simulador -- ciclo 5 - Primer DB disponible encontrada, nombre: [RECURSO_db_0] cantidad_recursos [10000] cantidad_lecturas [0]
+[2020-08-06 20:07:18.789134] Simulador -- ciclo 5 - Puedo ejecutar proceso pendiente
+[2020-08-06 20:07:18.796192] - PID 103 - Inicio
+[2020-08-06 20:07:18.798261] Simulador -- ciclo 5 - fin
+[2020-08-06 20:07:18.798261] - PID 103 - Tomando 100 recursos ...
+[2020-08-06 20:07:18.808207] - PID 103 - Leyendo ...
+[2020-08-06 20:07:23.800777] Simulador -- ciclo 6 - inicio
+[2020-08-06 20:07:23.806766] Simulador -- ciclo 6 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:07:23.819592] - PID 103 - Termino la lectura ...
+[2020-08-06 20:07:23.826591] - PID 103 - Liberando 100 recursos ...
+[2020-08-06 20:07:23.835588] - PID 103 - Fin
+[2020-08-06 20:07:23.841581] Simulador -- ciclo 7 - Proceso 103 terminado ...
+[2020-08-06 20:07:28.814225] Simulador -- ciclo 7 - inicio
+[2020-08-06 20:07:28.821226] Simulador -- ciclo 7 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:07:33.829199] Simulador -- ciclo 8 - inicio
+[2020-08-06 20:07:33.836194] Simulador -- ciclo 8 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-08-06 20:07:38.843388] Simulador -- ciclo 9 - inicio
+[2020-08-06 20:07:38.850383] Simulador -- ciclo 9 - Nada mas que procesar... espero hasta el proximo ciclo [5s]

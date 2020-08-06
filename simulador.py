@@ -127,7 +127,7 @@ class Simulador:
                         self.cola_procesos.append(proceso_actual)
                         
                     ejecute_un_proceso = True
-                if self.cola_espera[0].tiempo_entrada < self.ciclo:
+                elif self.cola_espera[0].tiempo_entrada < self.ciclo:
                     self.log_simulacion('Tiempo de entrada > ciclo, lo paso a la cola de procesos pendientes')
                     self.cola_procesos.append(self.cola_espera.popleft()) 
                     proceso_perdido = True
@@ -141,18 +141,20 @@ class Simulador:
             if not ejecute_un_proceso or proceso_perdido:
                 if self.cola_procesos:
                     last = None
+                    prioridad = None
                     for proc in self.cola_procesos:
                         if proc.accion in ['E']:
                             self.log_simulacion(f'proximo proceso escritor tiene prioridad')
                             self.log_simulacion(f'{str(proc)}')
-                            last = proc
+                            prioridad = proc
+                        last = proc
                     self.log_simulacion(f'Hay {len(self.cola_procesos)} proceso/s esperando que se liberen recursos')
                     self.log_simulacion(f'Cola de procesos pendientes {[p.pid for p in self.cola_procesos]}')
-                    recurso, puedo_ejecutar, msg = self.determinar_recurso_disponible(last or self.cola_procesos[0])
+                    recurso, puedo_ejecutar, msg = self.determinar_recurso_disponible(prioridad or last)
                     if puedo_ejecutar:
                         self.log_simulacion('Puedo ejecutar proceso pendiente')
-                        proceso_actual = self.cola_procesos.popleft()
-                        self.lanzar_proceso(proceso_actual, recurso)
+                        proceso_actual = self.cola_procesos.remove(prioridad or last)
+                        self.lanzar_proceso(prioridad or last, recurso)
                     else:
                         self.log_simulacion('Todavia no puedo ejecutar proceso pendiente')
                         self.log_simulacion(f'Razon: {msg}')
