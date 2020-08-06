@@ -1,0 +1,62 @@
+[2020-08-06 18:51:55.476968] Aplicacion -- Iniciando consola interactiva ...
+[2020-08-06 18:51:55.482967] Aplicacion -- Comandos: 
+[2020-08-06 18:51:55.487962] Aplicacion -- AGREGAR PROCESO: : Comando para agregar procesos a la cola de espera de la simulacion
+[2020-08-06 18:51:55.492959] Aplicacion -- EXIT: Salir del proceso
+[2020-08-06 18:51:55.497954] Aplicacion -- LISTO: Terminar la carga de procesos en la simulacion
+[2020-08-06 18:51:55.505949] Aplicacion -- ESTADO: Revisar estados de las colas y la simulacion
+[2020-08-06 18:52:01.089725] Aplicacion -- 
+[2020-08-06 18:52:01.094724] Aplicacion -- Formato:
+[2020-08-06 18:52:01.100720] Aplicacion -- accion: "L/E" - Tipo de proceso - Lectura o Escritura)
+[2020-08-06 18:52:01.105717] Aplicacion -- tiempo_accion: Cantidad de segundos que va a retener un recurso un proceso
+[2020-08-06 18:52:01.110644] Aplicacion -- tiempo_entrada: Tiempo (ciclo) en el que el proceso entra a la cola de espera. Si no es definido, es T+1 del ultimo proceso de la cola
+[2020-08-06 18:52:01.116642] Aplicacion -- pid: id del proceso, si no es ninguno se le asigna uno random
+[2020-08-06 18:52:01.122638] Aplicacion -- Ingresar separando con comas ...
+[2020-08-06 18:53:23.166441] Aplicacion -- Iniciando consola interactiva ...
+[2020-08-06 18:53:23.172438] Aplicacion -- Comandos: 
+[2020-08-06 18:53:23.177759] Aplicacion -- AGREGAR PROCESO: : Comando para agregar procesos a la cola de espera de la simulacion
+[2020-08-06 18:53:23.183057] Aplicacion -- EXIT: Salir del proceso
+[2020-08-06 18:53:23.188385] Aplicacion -- LISTO: Terminar la carga de procesos en la simulacion
+[2020-08-06 18:53:23.193460] Aplicacion -- ESTADO: Revisar estados de las colas y la simulacion
+[2020-08-06 18:53:26.631945] Aplicacion -- 
+[2020-08-06 18:53:26.637941] Aplicacion -- Formato:
+[2020-08-06 18:53:26.642938] Aplicacion -- accion: "L/E" - Tipo de proceso - Lectura o Escritura)
+[2020-08-06 18:53:26.648934] Aplicacion -- tiempo_accion: Cantidad de segundos que va a retener un recurso un proceso
+[2020-08-06 18:53:26.653933] Aplicacion -- tiempo_entrada: Tiempo (ciclo) en el que el proceso entra a la cola de espera. Si no es definido, es T+1 del ultimo proceso de la cola
+[2020-08-06 18:53:26.659928] Aplicacion -- pid: id del proceso, si no es ninguno se le asigna uno random
+[2020-08-06 18:53:26.664926] Aplicacion -- Ingresar separando con comas ...
+[2020-08-06 18:53:33.799934] Aplicacion -- Se ha ingresado correctamente proceso pid: 100 ...
+[2020-08-06 18:53:33.806221] Aplicacion -- Ingrese siguiente proceso a continuacion o enter para terminar de cargar procesos ...
+[2020-08-06 18:53:34.631667] Aplicacion -- Comandos: 
+[2020-08-06 18:53:34.637663] Aplicacion -- AGREGAR PROCESO: : Comando para agregar procesos a la cola de espera de la simulacion
+[2020-08-06 18:53:34.643659] Aplicacion -- EXIT: Salir del proceso
+[2020-08-06 18:53:34.648656] Aplicacion -- LISTO: Terminar la carga de procesos en la simulacion
+[2020-08-06 18:53:34.653653] Aplicacion -- ESTADO: Revisar estados de las colas y la simulacion
+[2020-08-06 18:53:35.536528] Aplicacion -- Se terminaron de cargar los procesos
+[2020-08-06 18:53:35.541523] Aplicacion -- Finaliza consola interactiva - 1 proceso/s a ingresar ...
+[2020-08-06 18:53:35.547519] Aplicacion -- Detalle de procesos a ingresar: 
+[2020-08-06 18:53:35.552516] Aplicacion -- ===================================================================================
+[2020-08-06 18:53:35.558512] Aplicacion -- PID: [100] ACCION [L] T0 [1] TA [1]
+[2020-08-06 18:53:35.564508] Aplicacion -- ===================================================================================
+[2020-08-06 18:53:35.570505] Aplicacion -- La aplicacion esta lista para empezar ...
+[2020-08-06 18:53:35.575502] Aplicacion -- Iniciando simulacion en modo multithreading (simulacion en vivo)
+[2020-08-06 18:53:35.581499] Simulador -- ciclo 0 - inicio
+[2020-08-06 18:53:35.590493] Simulador -- ciclo 0 - Hay 1 proceso/s en la cola de espera
+[2020-08-06 18:53:35.596491] Simulador -- ciclo 0 - Todavia no puedo ejecutar proceso de la cola de espera
+[2020-08-06 18:53:35.601486] Simulador -- ciclo 0 - PID [100] T Entrada [1]
+[2020-08-06 18:53:35.607739] Simulador -- ciclo 0 - fin
+[2020-08-06 18:53:40.613584] Simulador -- ciclo 1 - inicio
+[2020-08-06 18:53:40.619715] Simulador -- ciclo 1 - Hay 1 proceso/s en la cola de espera
+[2020-08-06 18:53:40.624684] Simulador -- ciclo 1 - Sale de cola de espera -> PID: [100] ACCION [L] T0 [1] TA [1]
+[2020-08-06 18:53:40.630680] Simulador -- ciclo 1 - Determinando recurso disponible del pool de 2 DB/s ...
+[2020-08-06 18:53:40.636677] Simulador -- ciclo 1 - Primer DB disponible encontrada, nombre: [RECURSO_db_0] cantidad_recursos [10000] cantidad_lecturas [0]
+[2020-08-06 18:53:40.641673] Simulador -- ciclo 1 - Puedo ejecutar proceso actual
+[2020-08-06 18:53:40.647670] - PID 100 - Inicio
+[2020-08-06 18:53:40.649671] Simulador -- ciclo 1 - fin
+[2020-08-06 18:53:40.655665] - PID 100 - Tomando 100 recursos ...
+[2020-08-06 18:53:40.660662] - PID 100 - Leyendo ...
+[2020-08-06 18:53:41.667629] - PID 100 - Termino la lectura ...
+[2020-08-06 18:53:41.673625] - PID 100 - Liberando 100 recursos ...
+[2020-08-06 18:53:41.679620] - PID 100 - Fin
+[2020-08-06 18:53:41.685751] Simulador -- ciclo 2 - Proceso 100 terminado ...
+[2020-08-06 18:53:45.650997] Simulador -- ciclo 2 - inicio
+[2020-08-06 18:53:45.656952] Simulador -- ciclo 2 - Nada mas que procesar... espero hasta el proximo ciclo [5s]

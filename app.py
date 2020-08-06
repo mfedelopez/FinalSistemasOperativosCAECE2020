@@ -84,14 +84,14 @@ class App:
                     args = {}
                     args['accion']         = input_usuario.split(',')[0].upper()
                     args['tiempo_accion']  = int(input_usuario.split(',')[1])
-                    if(len(args)) == 3:
+                    if(len(input_usuario.split(','))) == 3:
                         args['tiempo_entrada'] = int(input_usuario.split(',')[2])
                     elif proc:
                         args['tiempo_entrada'] = proc.tiempo_entrada + 1
                     else:
                         args['tiempo_entrada'] = 1
                         
-                    if(len(args)) == 4:
+                    if(len(input_usuario.split(','))) == 4:
                         args['pid'] = int(input_usuario.split(',')[3])
                     else:
                         args['pid'] = random.randint(0, 10000)
