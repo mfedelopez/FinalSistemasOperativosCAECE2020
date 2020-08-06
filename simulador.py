@@ -17,7 +17,7 @@ class Simulador:
         self.tiempo_sleep = kwargs.get('tiempo_sleep', 5)
         self.verbose = kwargs.get('verbose', True)
         self.recursos = []
-        self.cantidad_bases_de_datos = 2
+        self.cantidad_bases_de_datos = 1
         for i in range(0, self.cantidad_bases_de_datos):
             self.recursos.append(Recurso(nombre=f'db_{i}'))
 
@@ -87,6 +87,7 @@ class Simulador:
         while True:
             self.log_simulacion('inicio')
             ejecute_un_proceso = False
+            proceso_perdido = False
 
             #para no complicarnos con procesar de mas, si no tengo nada en la cola de espera y no tengo nada en la cola
             #de ejecucion, duermo el proceso y rompo el loop principal hasta que carguen de afuera mas procesos
@@ -128,7 +129,8 @@ class Simulador:
                     ejecute_un_proceso = True
                 if self.cola_espera[0].tiempo_entrada < self.ciclo:
                     self.log_simulacion('Tiempo de entrada > ciclo, lo paso a la cola de procesos pendientes')
-                    self.cola_procesos.append(self.cola_espera.popleft())
+                    self.cola_procesos.append(self.cola_espera.popleft()) 
+                    proceso_perdido = True
                 else:
                     self.log_simulacion('Todavia no puedo ejecutar proceso de la cola de espera')
                     self.log_simulacion(f'PID [{self.cola_espera[0].pid}] T Entrada [{self.cola_espera[0].tiempo_entrada}]')
@@ -136,11 +138,17 @@ class Simulador:
                 self.log_simulacion('No hay procesos en la cola de espera')
                 
             #si no ejecute nada de la cola de espera, paso a revisar la cola de procesos
-            if not ejecute_un_proceso:
+            if not ejecute_un_proceso or proceso_perdido:
                 if self.cola_procesos:
+                    last = None
+                    for proc in self.cola_procesos:
+                        if proc.accion in ['E']:
+                            self.log_simulacion(f'proximo proceso escritor tiene prioridad')
+                            self.log_simulacion(f'{str(proc)}')
+                            last = proc
                     self.log_simulacion(f'Hay {len(self.cola_procesos)} proceso/s esperando que se liberen recursos')
                     self.log_simulacion(f'Cola de procesos pendientes {[p.pid for p in self.cola_procesos]}')
-                    recurso, puedo_ejecutar, msg = self.determinar_recurso_disponible(self.cola_procesos[0])
+                    recurso, puedo_ejecutar, msg = self.determinar_recurso_disponible(last or self.cola_procesos[0])
                     if puedo_ejecutar:
                         self.log_simulacion('Puedo ejecutar proceso pendiente')
                         proceso_actual = self.cola_procesos.popleft()
