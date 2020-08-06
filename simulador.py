@@ -126,6 +126,9 @@ class Simulador:
                         self.cola_procesos.append(proceso_actual)
                         
                     ejecute_un_proceso = True
+                if self.cola_espera[0].tiempo_entrada < self.ciclo:
+                    self.log_simulacion('Tiempo de entrada > ciclo, lo paso a la cola de procesos pendientes')
+                    self.cola_procesos.append(self.cola_espera.popleft())
                 else:
                     self.log_simulacion('Todavia no puedo ejecutar proceso de la cola de espera')
                     self.log_simulacion(f'PID [{self.cola_espera[0].pid}] T Entrada [{self.cola_espera[0].tiempo_entrada}]')
