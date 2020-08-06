@@ -23,8 +23,7 @@ class App:
                                      
         self.PROCESOS_DESCRIPCION = {'accion': '"L/E" - Tipo de proceso - Lectura o Escritura)',
                                      'tiempo_accion': 'Cantidad de segundos que va a retener un recurso un proceso',
-                                     'tiempo_entrada': 'Tiempo (ciclo) en el que el proceso entra a la cola de espera. \
-                                                        Si no es definido, es T+1 del ultimo proceso de la cola',
+                                     'tiempo_entrada': 'Tiempo (ciclo) en el que el proceso entra a la cola de espera. Si no es definido, es T+1 del ultimo proceso de la cola',
                                      'pid': 'id del proceso, si no es ninguno se le asigna uno random' }
 
     def set_simulador(self, sim):
@@ -45,7 +44,7 @@ class App:
             self.simulador.agregar_proceso(proceso)
             
     def imprimir_comandos(self):
-        print('Comandos: ')
+        self.log_consola('Comandos: ')
         for comando, descripcion in self.COMANDOS_DESCRIPCION.items():
             self.log_consola(f'{comando}: {descripcion}')
             
