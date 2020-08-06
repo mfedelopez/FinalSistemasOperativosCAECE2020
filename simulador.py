@@ -36,8 +36,13 @@ class Simulador:
         self.ciclo = 0
 
     def log_simulacion(self, txt):
+        output_txt = f'[{datetime.datetime.now()}] Simulador -- ciclo {self.ciclo} - {txt}'
         if self.verbose:
-            print(f'[{datetime.datetime.now()}] Simulador -- ciclo {self.ciclo} - {txt}')
+            print(output_txt)
+            
+        with open(f'output_sim.txt', 'a') as f:
+            f.writelines(output_txt + '\n')
+        
             
     def determinar_recurso_disponible(self, proceso):
         self.log_simulacion(f'Determinando recurso disponible del pool de {len(self.recursos)} DB/s ...')

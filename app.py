@@ -49,8 +49,13 @@ class App:
             self.log_consola(f'{comando}: {descripcion}')
             
     def log_consola(self, txt):
+        output_txt = f'[{datetime.datetime.now()}] Aplicacion -- {txt}'
         if self.verbose:
-            print(f'[{datetime.datetime.now()}] Aplicacion -- {txt}')
+            print(output_txt)
+            
+        with open(f'output_sim.txt', 'a') as f:
+            f.write(output_txt + '\n')
+            
     
     def consola_interactiva(self):
         self.log_consola("Iniciando consola interactiva ...")

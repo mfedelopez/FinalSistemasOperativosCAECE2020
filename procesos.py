@@ -20,9 +20,13 @@ class Proceso:
         return f'PID: [{self.pid}] ACCION [{self.accion}] T0 [{self.tiempo_entrada}] TA [{self.tiempo_accion}]'
 
     def log(self, txt):
+        output_txt = f'[{datetime.datetime.now()}] - PID {self.pid} - {txt}'
         if self.verbose:
-            print(f'[{datetime.datetime.now()}] - PID {self.pid} - {txt}')
+            print(output_txt)
                     
+        with open(f'output_sim.txt', 'a') as f:
+            f.write(output_txt+'\n')
+            
     def realizar_accion(self, recurso, simulador):
         self.log('Inicio')
         
