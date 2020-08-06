@@ -2,8 +2,8 @@ import datetime
 import random
 import threading
 
-from simulador import Simulador
 from procesos import Proceso
+from simulador import Simulador
 
 class App:
     def __init__(self):
@@ -115,9 +115,10 @@ class App:
         if procesos_a_ingresar:
             self.log_consola(f'Finaliza consola interactiva - {len(procesos_a_ingresar)} proceso/s a ingresar ...')
             self.log_consola('Detalle de procesos a ingresar: ')
+            self.log_consola('===================================================================================')
             for proc in procesos_a_ingresar:
                 self.log_consola(f'{proc}')
-            
+            self.log_consola('===================================================================================')
             self.log_consola('La aplicacion esta lista para empezar ...')
             self.lista = True
             return procesos_a_ingresar

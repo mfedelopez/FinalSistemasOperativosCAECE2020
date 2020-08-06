@@ -22,9 +22,10 @@ class Proceso:
     def log(self, txt):
         if self.verbose:
             print(f'[{datetime.datetime.now()}] - PID {self.pid} - {txt}')
-        
-    def realizar_accion(self, recurso):
+                    
+    def realizar_accion(self, recurso, simulador):
         self.log('Inicio')
+        
         if self.accion in ['L']:
             self.log(f'Tomando {self.demanda_recursos} recursos ...')
             recurso.tomar_recursos(self.demanda_recursos)
@@ -47,6 +48,7 @@ class Proceso:
             
             self.log(f'Liberando mutex escritura ...')
             recurso.desbloquear_mutex()
-        
+            
         self.log('Fin')
+        simulador.agregar_proceso_terminado(self)
         

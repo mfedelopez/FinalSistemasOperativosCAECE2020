@@ -1,11 +1,14 @@
 import datetime
 class Recurso:
     def __init__(self, **kwargs):
-        self.nombre = 'RECURSO'
+        self.nombre = f'RECURSO_{kwargs.get("nombre")}'
         self.cantidad_recursos = kwargs.get('cantidad_recursos', 10000)
         self.mutex_interrupcion = kwargs.get('mutex_interrupcion', False) #por default no tenemos ninguna interrupcion
         self.mutex_escritura = kwargs.get('mutex_escritura', False) #por default puedo escribir
         self.cantidad_lecturas = 0
+        
+    def __str__(self):
+        return f'nombre: [{self.nombre}] cantidad_recursos [{self.cantidad_recursos}] cantidad_lecturas [{self.cantidad_lecturas}]'
 
     def liberar_recursos(self, demanda_recursos):
         #libero los recursos que habia tomado
