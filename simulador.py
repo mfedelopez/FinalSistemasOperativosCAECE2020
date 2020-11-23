@@ -1,8 +1,11 @@
 from collections import deque
 from recursos import Recurso
-#from tabulate import tabulate
+from tabulate import tabulate
 
 import datetime
+import numpy as np
+import os
+import pandas as pd
 import time
 import threading
 
@@ -11,6 +14,7 @@ class Simulador:
         self.cola_espera = deque()
         self.cola_terminados = deque()
         self.cola_procesos = deque()
+        self.lista_procesos_ejecucion = []
         self.total_recursos_lectura = 0
         self.ciclo = 0
         self.app = None
@@ -18,6 +22,7 @@ class Simulador:
         self.verbose = kwargs.get('verbose', True)
         self.recursos = []
         self.cantidad_bases_de_datos = 1
+        self.loop_metrics_list = []
         for i in range(0, self.cantidad_bases_de_datos):
             self.recursos.append(Recurso(nombre=f'db_{i}'))
 
@@ -40,8 +45,116 @@ class Simulador:
         if self.verbose:
             print(output_txt)
             
-        with open(f'output_sim.txt', 'a') as f:
+        with open('output_sim.txt', 'a') as f:
             f.writelines(output_txt + '\n')
+        
+    def init_loop_vars(self):
+        self._start_time_loop = datetime.datetime.now()
+        self._estado_cola_espera = len(self.cola_espera)
+        self._estado_cola_procesos = len(self.cola_procesos)
+        self._estado_cola_terminados = len(self.cola_terminados)
+                
+    
+    def generate_loop_metrics(self):
+        delta_tiempo = (self._start_time_loop - datetime.datetime.now()).seconds / 1e6
+        estado_cola_espera = self._estado_cola_espera - len(self.cola_espera)
+        estado_cola_procesos = self._estado_cola_procesos - len(self.cola_procesos)
+        estado_cola_terminados = self._estado_cola_terminados - len(self.cola_terminados)
+        
+        result = {'delta_tiempo':delta_tiempo,
+                  'estado_cola_espera':estado_cola_espera,
+                  'estado_cola_procesos':estado_cola_procesos,
+                  'estado_cola_terminados':estado_cola_terminados,}
+      
+        for recurso in self.recursos:
+            rec = recurso.to_dict()
+            for key, value in rec.items():
+                result[f'rec_{key}'] = value
+                       
+        self.loop_metrics_list.append(result)
+    
+    def _get_file_summary(self):
+        filename = 'simulation_summary.txt'
+        if os.path.exists(filename):
+            os.remove(filename) #empezamos de cero siempre
+        
+        return open(filename, 'a')
+    
+    def log_summary(self):
+        f = self._get_file_summary()
+        df = pd.DataFrame(self.loop_metrics_list)
+        
+        f.writelines(f'[{datetime.datetime.now()}] Resumen de la simulacion - ciclo {self.ciclo}\n')
+        f.writelines('---------------------------------------------------------------------------------\n')
+        f.writelines(f'Cantidad de procesos esperando: {len(self.cola_espera)} \n')
+        f.writelines(f'Cantidad de procesos ejecutando: {len(self.lista_procesos_ejecucion)}\n')
+        f.writelines(f'Cantidad de procesos esperando recursos: {len(self.cola_procesos)}\n')
+        f.writelines(f'Cantidad de procesos terminados: {len(self.cola_terminados)}\n\n')
+        
+        
+        # if self.cola_espera:
+        #     f.writelines('procesos en cola de espera: \r\n' ) 
+        #     for proc in list(self.cola_espera):
+        #         proc_df = pd.DataFrame(proc.to_dict().items())
+        #         table = tabulate(proc_df, headers='keys', tablefmt='psql') 
+        #         f.writelines(table)
+        #         f.writelines('')
+        
+        dfs = []
+        if self.cola_procesos:
+            procs_df = pd.DataFrame([proc.to_dict() for proc in list(self.cola_procesos)])
+            f.writelines(f'\nProcesos esperando para ser lanzados: \n{procs_df["pid"].values} \r\n' )
+            dfs.append(procs_df)
+        
+        if self.lista_procesos_ejecucion:
+            ejecucion_df = pd.DataFrame([proc.to_dict() for proc in self.lista_procesos_ejecucion])
+            f.writelines(f'\nProcesos en ejecucion: \n{ejecucion_df["pid"].values} \r\n' )
+            data = tabulate(ejecucion_df, headers='keys', tablefmt='psql')
+            f.writelines(data)
+            dfs.append(ejecucion_df)    
+            
+        if self.cola_terminados:
+            terminados_df = pd.DataFrame([proc.to_dict() for proc in list(self.cola_terminados)])
+            f.writelines(f'\nProcesos terminados: \n{terminados_df["pid"].values} \r\n' )
+            tiempos_lectura = terminados_df[terminados_df.accion == 'L']["total_tiempo"].values
+            tiempo_promedio_lectura = np.average(tiempos_lectura) if len(tiempos_lectura) else np.nan
+            
+            tiempo_escritura = terminados_df[terminados_df.accion == 'E']["total_tiempo"].values
+            tiempo_promedio_escritura = np.average(tiempo_escritura) if len(tiempo_escritura) else np.nan
+            
+            tiempo_promedio =  terminados_df["total_tiempo"].values
+            tiempo_promedio_total = np.average(tiempo_promedio) if len(tiempo_promedio) else np.nan
+            tiempo_total = np.sum(tiempo_promedio)
+            
+            f.writelines(f'Tiempo promedio de ejecucion [t(L)] = {tiempo_promedio_lectura}s \n' +\
+                         f'Tiempo promedio de ejecucion [t(E)] = {tiempo_promedio_escritura}s \n'+\
+                         f'Tiempo promedio de ejecucion [t(L) + t(E)] = {tiempo_promedio_total}s\n' +\
+                         f'Tiempo total ejecutando procesos = {tiempo_total}s \n\n')
+                
+            data = tabulate(terminados_df,  headers='keys', tablefmt='psql')
+            f.writelines(data)
+            dfs.append(terminados_df)    
+                        
+        f.writelines('\n\nTabla de ejecucion de por ciclo \n\n')
+        data = tabulate(df, headers='keys', tablefmt='psql')
+        f.writelines(data)
+        f.close()
+        
+    def loop_metrics(self):
+        '''
+        pasos para agregar una metrica del loop:
+            1- inicializar contador en init_loop_vars
+            2- procesas el contador en generate_loop_metrics
+            3- profit
+
+        Returns
+        -------
+        None.
+
+        '''
+        self.log_simulacion(f'generando metricas para el loop [{self.ciclo}]')
+        self.generate_loop_metrics()
+        self.log_summary()
         
             
     def determinar_recurso_disponible(self, proceso):
@@ -77,8 +190,10 @@ class Simulador:
     def agregar_proceso_terminado(self, proceso):
         self.log_simulacion(f'Proceso {proceso.pid} terminado ...')
         self.cola_terminados.append(proceso)
-                
+        self.lista_procesos_ejecucion.remove(proceso)
+                        
     def lanzar_proceso(self, proceso, recurso):
+        self.lista_procesos_ejecucion.append(proceso)
         x = threading.Thread(target=proceso.realizar_accion, args=(recurso, self))
         x.start()
         return x
@@ -88,11 +203,13 @@ class Simulador:
             self.log_simulacion('inicio')
             ejecute_un_proceso = False
             proceso_perdido = False
+            self.init_loop_vars()
 
             #para no complicarnos con procesar de mas, si no tengo nada en la cola de espera y no tengo nada en la cola
             #de ejecucion, duermo el proceso y rompo el loop principal hasta que carguen de afuera mas procesos
             if not self.cola_espera and not self.cola_procesos:
                 self.log_simulacion(f'Nada mas que procesar... espero hasta el proximo ciclo [{self.tiempo_sleep}s]')
+                self.loop_metrics()
                 self.ciclo += 1
                 time.sleep(self.tiempo_sleep)
                 continue
@@ -125,11 +242,12 @@ class Simulador:
                         self.log_simulacion('No puedo ejecutar actualmente, agrego a cola de procesos')
                         self.log_simulacion(f'Razon: {msg}')
                         self.cola_procesos.append(proceso_actual)
-                        
+                                                
                     ejecute_un_proceso = True
                 elif self.cola_espera[0].tiempo_entrada < self.ciclo:
                     self.log_simulacion('Tiempo de entrada > ciclo, lo paso a la cola de procesos pendientes')
-                    self.cola_procesos.append(self.cola_espera.popleft()) 
+                    proceso_actual = self.cola_espera.popleft()
+                    self.cola_procesos.append(proceso_actual) 
                     proceso_perdido = True
                 else:
                     self.log_simulacion('Todavia no puedo ejecutar proceso de la cola de espera')
@@ -158,6 +276,9 @@ class Simulador:
                     else:
                         self.log_simulacion('Todavia no puedo ejecutar proceso pendiente')
                         self.log_simulacion(f'Razon: {msg}')
+
+            # ultimo log: metricas del loop
+            self.loop_metrics()
 
             # terminamos el ciclo
             self.log_simulacion('fin')

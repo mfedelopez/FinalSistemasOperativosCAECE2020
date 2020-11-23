@@ -9,9 +9,12 @@ class App:
     def __init__(self):
         self.mutex = 0
         self.simulador = None
-        self.interactiva = True
-        self.multithread = True #si lo ejecuto multithread para tener la consola interactiva pierdo visibilidad de los procesos de 2do nivel
-        self.lista = False
+        self.interactiva = False
+        #si lo ejecuto multithread para tener la consola interactiva pierdo 
+        #visibilidad de los procesos de 2do nivel
+        self.multithread = self.interactiva
+        #no me acuerdo bien para que era este flag pero si no es interactiva no se usa
+        self.lista = not self.interactiva
         self.debug_cmd = False
         self.verbose = True
         self.COMANDOS_DESCRIPCION = {'AGREGAR PROCESO': ': Comando para agregar procesos a la cola de espera de la simulacion',

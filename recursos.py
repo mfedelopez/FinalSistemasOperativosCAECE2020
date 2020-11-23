@@ -9,6 +9,20 @@ class Recurso:
         
     def __str__(self):
         return f'nombre: [{self.nombre}] cantidad_recursos [{self.cantidad_recursos}] cantidad_lecturas [{self.cantidad_lecturas}]'
+    
+    def to_dict(self):
+        '''
+        obj->dict
+        '''
+        result = {}
+        result['nombre'] = self.nombre
+        result['cantidad_recursos'] = self.cantidad_recursos
+        result['mutex_interrupcion'] = self.mutex_interrupcion
+        result['mutex_escritura'] = self.mutex_escritura
+        result['cantidad_lecturas'] = self.cantidad_lecturas
+        
+        return result
+        
 
     def liberar_recursos(self, demanda_recursos):
         #libero los recursos que habia tomado
