@@ -11,6 +11,7 @@ class Proceso:
         self.verbose = kwargs.get('verbose', True)
         self.start_timestamp = None
         self.end_timestamp = None
+        self.recurso_utilizado = ''
         
         #necesitamos que esten bien los parametros
         if not (self.accion and self.tiempo_entrada and self.tiempo_accion):
@@ -41,6 +42,7 @@ class Proceso:
         start_timestamp = self.start_timestamp or end_tstamp
         total_tiempo = (end_tstamp - start_timestamp).seconds
         result['total_tiempo'] = total_tiempo
+        result['recurso_utilizado'] = self.recurso_utilizado
         
         return result
         
@@ -48,6 +50,7 @@ class Proceso:
     def realizar_accion(self, recurso, simulador):
         self.log('Inicio')
         self.start_timestamp = datetime.datetime.now()        
+        self.recurso_utilizado = recurso.nombre
         
         if self.accion in ['L']:
             self.log(f'Tomando {self.demanda_recursos} recursos ...')
@@ -74,6 +77,6 @@ class Proceso:
             recurso.desbloquear_mutex()
             
         self.log('Fin')
-        self.end_timestamp = datetime.datetime.now()
+        self.end_timestamp = datetime.datetime.now()        
         simulador.agregar_proceso_terminado(self)
         

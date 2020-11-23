@@ -7,7 +7,6 @@ from simulador import Simulador
 
 class App:
     def __init__(self):
-        self.mutex = 0
         self.simulador = None
         self.interactiva = False
         #si lo ejecuto multithread para tener la consola interactiva pierdo 
@@ -148,7 +147,11 @@ class App:
 if __name__ == '__main__':
     #inicializacion
     app = App()
-    app.set_simulador(Simulador())
+    #TEST 1
+    # app.set_simulador(Simulador())
+    
+    #TEST 2 y 3
+    app.set_simulador(Simulador(cantidad_db=2, cantidad_recursos=500))
     
     #ingreso de procesos por comando o con ejemplo default
     if app.interactiva:
@@ -163,13 +166,40 @@ if __name__ == '__main__':
             app.log_consola(f'')
     else:
         #inicializacion default para testear rapido    
+        #TEST 1
+        # app.agregar_procesos([
+        #     Proceso(accion='L', tiempo_accion=10,  tiempo_entrada=1, pid=100),
+        #     Proceso(accion='L', tiempo_accion=10,  tiempo_entrada=2, pid=101),
+        #     Proceso(accion='L', tiempo_accion=10,  tiempo_entrada=3, pid=102),
+        #     Proceso(accion='E', tiempo_accion=25,  tiempo_entrada=4, pid=550),
+        #     Proceso(accion='L', tiempo_accion=20,  tiempo_entrada=5, pid=104),
+        #     Proceso(accion='E', tiempo_accion=25,  tiempo_entrada=6, pid=551),])
+        
+        #TEST 2
+        # app.agregar_procesos([
+        #     Proceso(accion='L', tiempo_accion=10,  tiempo_entrada=1, pid=100),
+        #     Proceso(accion='L', tiempo_accion=10,  tiempo_entrada=1, pid=101),
+        #     Proceso(accion='L', tiempo_accion=10,  tiempo_entrada=1, pid=102),
+        #     Proceso(accion='L', tiempo_accion=10,  tiempo_entrada=1, pid=103),
+        #     Proceso(accion='L', tiempo_accion=10,  tiempo_entrada=1, pid=104),
+        #     Proceso(accion='L', tiempo_accion=10,  tiempo_entrada=1, pid=105),
+        #     Proceso(accion='L', tiempo_accion=10,  tiempo_entrada=1, pid=106),
+        #     Proceso(accion='L', tiempo_accion=10,  tiempo_entrada=1, pid=107),            
+        #     ])
+        
+        #TEST 3
         app.agregar_procesos([
-            Proceso(accion='L', tiempo_accion=10,  tiempo_entrada=1, pid=100),
+            Proceso(accion='E', tiempo_accion=20,  tiempo_entrada=1, pid=501),
+            Proceso(accion='E', tiempo_accion=20,  tiempo_entrada=1, pid=502),
             Proceso(accion='L', tiempo_accion=10,  tiempo_entrada=2, pid=101),
-            Proceso(accion='L', tiempo_accion=10,  tiempo_entrada=3, pid=102),
-            Proceso(accion='E', tiempo_accion=25,  tiempo_entrada=4, pid=550),
-            Proceso(accion='L', tiempo_accion=20,  tiempo_entrada=5, pid=104),
-            Proceso(accion='E', tiempo_accion=25,  tiempo_entrada=6, pid=551),])
+            Proceso(accion='L', tiempo_accion=10,  tiempo_entrada=2, pid=102),
+            Proceso(accion='L', tiempo_accion=10,  tiempo_entrada=2, pid=103),
+            Proceso(accion='E', tiempo_accion=20,  tiempo_entrada=9, pid=503),
+            Proceso(accion='L', tiempo_accion=10,  tiempo_entrada=10, pid=104),
+            Proceso(accion='L', tiempo_accion=10,  tiempo_entrada=10, pid=105),            
+            ])
+        
+        
 
     #para poder simular la consola interactiva, si o si tengo que correr en multithread
     #sino el while(True) del simulador bloquea el input

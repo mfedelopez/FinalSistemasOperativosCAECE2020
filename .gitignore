@@ -1,3 +1,11 @@
 
 *.pyc
 *.pyc
+.idea/FinalSistemasOperativosCAECE2020.iml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.vs/FinalSistemasOperativosCAECE2020/v16/.suo
+.vs/slnx.sqlite
+.vs/VSWorkspaceState.json

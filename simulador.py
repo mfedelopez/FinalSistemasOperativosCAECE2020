@@ -21,10 +21,12 @@ class Simulador:
         self.tiempo_sleep = kwargs.get('tiempo_sleep', 5)
         self.verbose = kwargs.get('verbose', True)
         self.recursos = []
-        self.cantidad_bases_de_datos = 1
+        self.cantidad_bases_de_datos = kwargs.get('cantidad_db',1)
+        self.cantidad_recursos = kwargs.get('cantidad_recursos',10000)
         self.loop_metrics_list = []
         for i in range(0, self.cantidad_bases_de_datos):
-            self.recursos.append(Recurso(nombre=f'db_{i}'))
+            self.recursos.append(Recurso(nombre=f'db_{i}',
+                                         cantidad_recursos=self.cantidad_recursos))
 
     def set_app(self, app):
         #necesitamos tener comunicacion con el proceso grafico para poder refrescar la interfaz en tiempo real
@@ -56,7 +58,7 @@ class Simulador:
                 
     
     def generate_loop_metrics(self):
-        delta_tiempo = (self._start_time_loop - datetime.datetime.now()).seconds / 1e6
+        delta_tiempo = (datetime.datetime.now() - self._start_time_loop).seconds
         estado_cola_espera = self._estado_cola_espera - len(self.cola_espera)
         estado_cola_procesos = self._estado_cola_procesos - len(self.cola_procesos)
         estado_cola_terminados = self._estado_cola_terminados - len(self.cola_terminados)
@@ -224,36 +226,39 @@ class Simulador:
             #
             #############################################################################################################
             #siempre preguntamos primero por la cola de espera
-            if self.cola_espera:            
+            if self.cola_espera:
                 self.log_simulacion(f'Hay {len(self.cola_espera)} proceso/s en la cola de espera')
                 #caso 1 - si el tiempo de entrada del primer elemento de la cola coincide con el ciclo actual
-                if self.cola_espera[0].tiempo_entrada == self.ciclo:
-                    
-                    #primero lo saco de la cola
-                    proceso_actual = self.cola_espera.popleft()
-    
-                    self.log_simulacion(f'Sale de cola de espera -> {proceso_actual}')
-    
-                    recurso, puedo_ejecutar, msg = self.determinar_recurso_disponible(proceso_actual)
-                    if puedo_ejecutar:
-                        self.log_simulacion('Puedo ejecutar proceso actual')
-                        self.lanzar_proceso(proceso_actual, recurso)
+                procesos_en_t = True
+                while procesos_en_t:
+                    if self.cola_espera[0].tiempo_entrada == self.ciclo:
+                        #primero lo saco de la cola
+                        proceso_actual = self.cola_espera.popleft()
+                        procesos_en_t = bool(len(self.cola_espera))
+        
+                        self.log_simulacion(f'Sale de cola de espera -> {proceso_actual}')
+        
+                        recurso, puedo_ejecutar, msg = self.determinar_recurso_disponible(proceso_actual)
+                        if puedo_ejecutar:
+                            self.log_simulacion('Puedo ejecutar proceso actual')
+                            self.lanzar_proceso(proceso_actual, recurso)
+                        else:
+                            self.log_simulacion('No puedo ejecutar actualmente, agrego a cola de procesos')
+                            self.log_simulacion(f'Razon: {msg}')
+                            self.cola_procesos.append(proceso_actual)
+                                                    
+                        ejecute_un_proceso = True
+                    elif self.cola_espera[0].tiempo_entrada < self.ciclo:
+                        self.log_simulacion('Tiempo de entrada > ciclo, lo paso a la cola de procesos pendientes')
+                        proceso_actual = self.cola_espera.popleft()
+                        self.cola_procesos.append(proceso_actual) 
+                        proceso_perdido = True
                     else:
-                        self.log_simulacion('No puedo ejecutar actualmente, agrego a cola de procesos')
-                        self.log_simulacion(f'Razon: {msg}')
-                        self.cola_procesos.append(proceso_actual)
-                                                
-                    ejecute_un_proceso = True
-                elif self.cola_espera[0].tiempo_entrada < self.ciclo:
-                    self.log_simulacion('Tiempo de entrada > ciclo, lo paso a la cola de procesos pendientes')
-                    proceso_actual = self.cola_espera.popleft()
-                    self.cola_procesos.append(proceso_actual) 
-                    proceso_perdido = True
+                        self.log_simulacion('Todavia no puedo ejecutar proceso de la cola de espera')
+                        self.log_simulacion(f'PID [{self.cola_espera[0].pid}] T Entrada [{self.cola_espera[0].tiempo_entrada}]')
+                        procesos_en_t = False
                 else:
-                    self.log_simulacion('Todavia no puedo ejecutar proceso de la cola de espera')
-                    self.log_simulacion(f'PID [{self.cola_espera[0].pid}] T Entrada [{self.cola_espera[0].tiempo_entrada}]')
-            else:
-                self.log_simulacion('No hay procesos en la cola de espera')
+                    self.log_simulacion('No hay procesos en la cola de espera')
                 
             #si no ejecute nada de la cola de espera, paso a revisar la cola de procesos
             if not ejecute_un_proceso or proceso_perdido:
