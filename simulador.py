@@ -24,6 +24,7 @@ class Simulador:
         self.cantidad_bases_de_datos = kwargs.get('cantidad_db',1)
         self.cantidad_recursos = kwargs.get('cantidad_recursos',10000)
         self.loop_metrics_list = []
+        self.ciclo_muerto = 0
         for i in range(0, self.cantidad_bases_de_datos):
             self.recursos.append(Recurso(nombre=f'db_{i}',
                                          cantidad_recursos=self.cantidad_recursos))
@@ -214,6 +215,7 @@ class Simulador:
                 self.loop_metrics()
                 self.ciclo += 1
                 time.sleep(self.tiempo_sleep)
+                self.ciclo_muerto += 1
                 continue
             
             
@@ -227,6 +229,7 @@ class Simulador:
             #############################################################################################################
             #siempre preguntamos primero por la cola de espera
             if self.cola_espera:
+                self.ciclo_muerto = 0
                 self.log_simulacion(f'Hay {len(self.cola_espera)} proceso/s en la cola de espera')
                 #caso 1 - si el tiempo de entrada del primer elemento de la cola coincide con el ciclo actual
                 procesos_en_t = True
@@ -263,6 +266,7 @@ class Simulador:
             #si no ejecute nada de la cola de espera, paso a revisar la cola de procesos
             if not ejecute_un_proceso or proceso_perdido:
                 if self.cola_procesos:
+                    self.ciclo_muerto = 0
                     last = None
                     prioridad = None
                     for proc in self.cola_procesos:
@@ -292,5 +296,11 @@ class Simulador:
             #refrescamos la pantalla
             #self.app.refrescar_pantalla(self)
             time.sleep(self.tiempo_sleep)
+            
+            #con mas de 50 ciclos sin hacer nada frenamos la ejecucion
+            if self.ciclo_muerto in [10]:
+                self.log_simulacion(f'Simulacion terminada en ciclo {self.ciclo} despues de {10} ciclos sin actividad')
+                break
+                
 
 

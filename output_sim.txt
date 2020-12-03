@@ -2405,3 +2405,510 @@
 [2020-12-03 14:48:44.202444] - PID 104 - Liberando 100 recursos ...
 [2020-12-03 14:48:44.203433] - PID 104 - Fin
 [2020-12-03 14:48:44.203433] Simulador -- ciclo 19 - Proceso 104 terminado ...
+[2020-12-03 18:02:08.336669] Aplicacion -- Iniciando consola interactiva ...
+[2020-12-03 18:02:08.337668] Aplicacion -- Comandos: 
+[2020-12-03 18:02:08.338668] Aplicacion -- AGREGAR PROCESO: : Comando para agregar procesos a la cola de espera de la simulacion
+[2020-12-03 18:02:08.338668] Aplicacion -- EXIT: Salir del proceso
+[2020-12-03 18:02:08.338668] Aplicacion -- LISTO: Terminar la carga de procesos en la simulacion
+[2020-12-03 18:02:08.339667] Aplicacion -- ESTADO: Revisar estados de las colas y la simulacion
+[2020-12-03 18:02:17.397468] Aplicacion -- 
+[2020-12-03 18:02:17.398460] Aplicacion -- Formato:
+[2020-12-03 18:02:17.398460] Aplicacion -- accion: "L/E" - Tipo de proceso - Lectura o Escritura)
+[2020-12-03 18:02:17.399485] Aplicacion -- tiempo_accion: Cantidad de segundos que va a retener un recurso un proceso
+[2020-12-03 18:02:17.399485] Aplicacion -- tiempo_entrada: Tiempo (ciclo) en el que el proceso entra a la cola de espera. Si no es definido, es T+1 del ultimo proceso de la cola
+[2020-12-03 18:02:17.399485] Aplicacion -- pid: id del proceso, si no es ninguno se le asigna uno random
+[2020-12-03 18:02:17.400480] Aplicacion -- Ingresar separando con comas ...
+[2020-12-03 18:03:01.754340] Aplicacion -- Se ha ingresado correctamente proceso pid: 100 ...
+[2020-12-03 18:03:01.755340] Aplicacion -- Ingrese siguiente proceso a continuacion o enter para terminar de cargar procesos ...
+[2020-12-03 18:03:12.637781] Aplicacion -- Se ha ingresado correctamente proceso pid: 101 ...
+[2020-12-03 18:03:12.638780] Aplicacion -- Ingrese siguiente proceso a continuacion o enter para terminar de cargar procesos ...
+[2020-12-03 18:03:16.410804] Aplicacion -- Se ha ingresado correctamente proceso pid: 102 ...
+[2020-12-03 18:03:16.411811] Aplicacion -- Ingrese siguiente proceso a continuacion o enter para terminar de cargar procesos ...
+[2020-12-03 18:03:16.786440] Aplicacion -- Comandos: 
+[2020-12-03 18:03:16.787449] Aplicacion -- AGREGAR PROCESO: : Comando para agregar procesos a la cola de espera de la simulacion
+[2020-12-03 18:03:16.787449] Aplicacion -- EXIT: Salir del proceso
+[2020-12-03 18:03:16.788439] Aplicacion -- LISTO: Terminar la carga de procesos en la simulacion
+[2020-12-03 18:03:16.788439] Aplicacion -- ESTADO: Revisar estados de las colas y la simulacion
+[2020-12-03 18:03:18.739937] Aplicacion -- Se terminaron de cargar los procesos
+[2020-12-03 18:03:18.740930] Aplicacion -- Finaliza consola interactiva - 3 proceso/s a ingresar ...
+[2020-12-03 18:03:18.740930] Aplicacion -- Detalle de procesos a ingresar: 
+[2020-12-03 18:03:18.741929] Aplicacion -- ===================================================================================
+[2020-12-03 18:03:18.741929] Aplicacion -- PID: [100] ACCION [L] T0 [1] TA [10]
+[2020-12-03 18:03:18.742929] Aplicacion -- PID: [101] ACCION [L] T0 [1] TA [10]
+[2020-12-03 18:03:18.742929] Aplicacion -- PID: [102] ACCION [L] T0 [1] TA [10]
+[2020-12-03 18:03:18.742929] Aplicacion -- ===================================================================================
+[2020-12-03 18:03:18.743928] Aplicacion -- La aplicacion esta lista para empezar ...
+[2020-12-03 18:03:18.743928] Aplicacion -- Iniciando simulacion en modo multithreading (simulacion en vivo)
+[2020-12-03 18:03:18.744928] Simulador -- ciclo 0 - inicio
+[2020-12-03 18:03:18.746927] Simulador -- ciclo 0 - Hay 3 proceso/s en la cola de espera
+[2020-12-03 18:03:18.747926] Simulador -- ciclo 0 - Todavia no puedo ejecutar proceso de la cola de espera
+[2020-12-03 18:03:18.748930] Simulador -- ciclo 0 - PID [100] T Entrada [1]
+[2020-12-03 18:03:18.748930] Simulador -- ciclo 0 - No hay procesos en la cola de espera
+[2020-12-03 18:03:18.749926] Simulador -- ciclo 0 - generando metricas para el loop [0]
+[2020-12-03 18:03:18.754922] Simulador -- ciclo 0 - fin
+[2020-12-03 18:03:23.755616] Simulador -- ciclo 1 - inicio
+[2020-12-03 18:03:23.755616] Simulador -- ciclo 1 - Hay 3 proceso/s en la cola de espera
+[2020-12-03 18:03:23.756634] Simulador -- ciclo 1 - Sale de cola de espera -> PID: [100] ACCION [L] T0 [1] TA [10]
+[2020-12-03 18:03:23.756634] Simulador -- ciclo 1 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-12-03 18:03:23.757627] Simulador -- ciclo 1 - Primer DB disponible encontrada, nombre: [RECURSO_db_0] cantidad_recursos [10000] cantidad_lecturas [0]
+[2020-12-03 18:03:23.757627] Simulador -- ciclo 1 - Puedo ejecutar proceso actual
+[2020-12-03 18:03:23.758616] - PID 100 - Inicio
+[2020-12-03 18:03:23.760642] Simulador -- ciclo 1 - Sale de cola de espera -> PID: [101] ACCION [L] T0 [1] TA [10]
+[2020-12-03 18:03:23.760642] Simulador -- ciclo 1 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-12-03 18:03:23.760642] - PID 100 - Tomando 100 recursos ...
+[2020-12-03 18:03:23.761622] Simulador -- ciclo 1 - Primer DB disponible encontrada, nombre: [RECURSO_db_0] cantidad_recursos [10000] cantidad_lecturas [0]
+[2020-12-03 18:03:23.761622] - PID 100 - Leyendo ...
+[2020-12-03 18:03:23.762614] Simulador -- ciclo 1 - Puedo ejecutar proceso actual
+[2020-12-03 18:03:23.764624] Simulador -- ciclo 1 - Sale de cola de espera -> PID: [102] ACCION [L] T0 [1] TA [10]
+[2020-12-03 18:03:23.763614] - PID 101 - Inicio
+[2020-12-03 18:03:23.765612] - PID 101 - Tomando 100 recursos ...
+[2020-12-03 18:03:23.765612] Simulador -- ciclo 1 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-12-03 18:03:23.766628] - PID 101 - Leyendo ...
+[2020-12-03 18:03:23.767629] Simulador -- ciclo 1 - Primer DB disponible encontrada, nombre: [RECURSO_db_0] cantidad_recursos [9800] cantidad_lecturas [2]
+[2020-12-03 18:03:23.768610] Simulador -- ciclo 1 - Puedo ejecutar proceso actual
+[2020-12-03 18:03:23.768610] - PID 102 - Inicio
+[2020-12-03 18:03:23.770610] Simulador -- ciclo 1 - No hay procesos en la cola de espera
+[2020-12-03 18:03:23.771622] Simulador -- ciclo 1 - generando metricas para el loop [1]
+[2020-12-03 18:03:23.771622] - PID 102 - Tomando 100 recursos ...
+[2020-12-03 18:03:23.771622] - PID 102 - Leyendo ...
+[2020-12-03 18:03:23.777622] Simulador -- ciclo 1 - fin
+[2020-12-03 18:03:28.779122] Simulador -- ciclo 2 - inicio
+[2020-12-03 18:03:28.779122] Simulador -- ciclo 2 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:03:28.780124] Simulador -- ciclo 2 - generando metricas para el loop [2]
+[2020-12-03 18:03:33.763941] - PID 100 - Termino la lectura ...
+[2020-12-03 18:03:33.763941] - PID 100 - Liberando 100 recursos ...
+[2020-12-03 18:03:33.764940] - PID 100 - Fin
+[2020-12-03 18:03:33.764940] Simulador -- ciclo 3 - Proceso 100 terminado ...
+[2020-12-03 18:03:33.768937] - PID 101 - Termino la lectura ...
+[2020-12-03 18:03:33.768937] - PID 101 - Liberando 100 recursos ...
+[2020-12-03 18:03:33.769937] - PID 101 - Fin
+[2020-12-03 18:03:33.769937] Simulador -- ciclo 3 - Proceso 101 terminado ...
+[2020-12-03 18:03:33.773936] - PID 102 - Termino la lectura ...
+[2020-12-03 18:03:33.773936] - PID 102 - Liberando 100 recursos ...
+[2020-12-03 18:03:33.774934] - PID 102 - Fin
+[2020-12-03 18:03:33.774934] Simulador -- ciclo 3 - Proceso 102 terminado ...
+[2020-12-03 18:03:33.786937] Simulador -- ciclo 3 - inicio
+[2020-12-03 18:03:33.786937] Simulador -- ciclo 3 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:03:33.787935] Simulador -- ciclo 3 - generando metricas para el loop [3]
+[2020-12-03 18:03:38.796894] Simulador -- ciclo 4 - inicio
+[2020-12-03 18:03:38.796894] Simulador -- ciclo 4 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:03:38.797894] Simulador -- ciclo 4 - generando metricas para el loop [4]
+[2020-12-03 18:03:43.806747] Simulador -- ciclo 5 - inicio
+[2020-12-03 18:03:43.806747] Simulador -- ciclo 5 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:03:43.807749] Simulador -- ciclo 5 - generando metricas para el loop [5]
+[2020-12-03 18:03:48.815832] Simulador -- ciclo 6 - inicio
+[2020-12-03 18:03:48.815832] Simulador -- ciclo 6 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:03:48.816844] Simulador -- ciclo 6 - generando metricas para el loop [6]
+[2020-12-03 18:03:53.826156] Simulador -- ciclo 7 - inicio
+[2020-12-03 18:03:53.826156] Simulador -- ciclo 7 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:03:53.827156] Simulador -- ciclo 7 - generando metricas para el loop [7]
+[2020-12-03 18:03:58.836825] Simulador -- ciclo 8 - inicio
+[2020-12-03 18:03:58.836825] Simulador -- ciclo 8 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:03:58.837814] Simulador -- ciclo 8 - generando metricas para el loop [8]
+[2020-12-03 18:04:03.846498] Simulador -- ciclo 9 - inicio
+[2020-12-03 18:04:03.846498] Simulador -- ciclo 9 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:04:03.847499] Simulador -- ciclo 9 - generando metricas para el loop [9]
+[2020-12-03 18:04:08.856340] Simulador -- ciclo 10 - inicio
+[2020-12-03 18:04:08.856340] Simulador -- ciclo 10 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:04:08.857342] Simulador -- ciclo 10 - generando metricas para el loop [10]
+[2020-12-03 18:04:13.866480] Simulador -- ciclo 11 - inicio
+[2020-12-03 18:04:13.866480] Simulador -- ciclo 11 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:04:13.867479] Simulador -- ciclo 11 - generando metricas para el loop [11]
+[2020-12-03 18:04:18.878361] Simulador -- ciclo 12 - inicio
+[2020-12-03 18:04:18.878361] Simulador -- ciclo 12 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:04:18.879362] Simulador -- ciclo 12 - generando metricas para el loop [12]
+[2020-12-03 18:04:23.889818] Simulador -- ciclo 13 - inicio
+[2020-12-03 18:04:23.889818] Simulador -- ciclo 13 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:04:23.890822] Simulador -- ciclo 13 - generando metricas para el loop [13]
+[2020-12-03 18:04:28.900818] Simulador -- ciclo 14 - inicio
+[2020-12-03 18:04:28.900818] Simulador -- ciclo 14 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:04:28.901818] Simulador -- ciclo 14 - generando metricas para el loop [14]
+[2020-12-03 18:04:33.913518] Simulador -- ciclo 15 - inicio
+[2020-12-03 18:04:33.913518] Simulador -- ciclo 15 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:04:33.914521] Simulador -- ciclo 15 - generando metricas para el loop [15]
+[2020-12-03 18:04:38.926286] Simulador -- ciclo 16 - inicio
+[2020-12-03 18:04:38.926286] Simulador -- ciclo 16 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:04:38.927287] Simulador -- ciclo 16 - generando metricas para el loop [16]
+[2020-12-03 18:04:43.938905] Simulador -- ciclo 17 - inicio
+[2020-12-03 18:04:43.938905] Simulador -- ciclo 17 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:04:43.939903] Simulador -- ciclo 17 - generando metricas para el loop [17]
+[2020-12-03 18:04:48.951627] Simulador -- ciclo 18 - inicio
+[2020-12-03 18:04:48.951627] Simulador -- ciclo 18 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:04:48.952626] Simulador -- ciclo 18 - generando metricas para el loop [18]
+[2020-12-03 18:04:53.963806] Simulador -- ciclo 19 - inicio
+[2020-12-03 18:04:53.963806] Simulador -- ciclo 19 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:04:53.964808] Simulador -- ciclo 19 - generando metricas para el loop [19]
+[2020-12-03 18:04:58.976267] Simulador -- ciclo 20 - inicio
+[2020-12-03 18:04:58.976267] Simulador -- ciclo 20 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:04:58.977268] Simulador -- ciclo 20 - generando metricas para el loop [20]
+[2020-12-03 18:05:03.990417] Simulador -- ciclo 21 - inicio
+[2020-12-03 18:05:03.990417] Simulador -- ciclo 21 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:05:03.991406] Simulador -- ciclo 21 - generando metricas para el loop [21]
+[2020-12-03 18:05:09.002676] Simulador -- ciclo 22 - inicio
+[2020-12-03 18:05:09.002676] Simulador -- ciclo 22 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:05:09.003694] Simulador -- ciclo 22 - generando metricas para el loop [22]
+[2020-12-03 18:05:14.015910] Simulador -- ciclo 23 - inicio
+[2020-12-03 18:05:14.015910] Simulador -- ciclo 23 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:05:14.016909] Simulador -- ciclo 23 - generando metricas para el loop [23]
+[2020-12-03 18:05:19.029250] Simulador -- ciclo 24 - inicio
+[2020-12-03 18:05:19.029250] Simulador -- ciclo 24 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:05:19.030250] Simulador -- ciclo 24 - generando metricas para el loop [24]
+[2020-12-03 18:05:24.043625] Simulador -- ciclo 25 - inicio
+[2020-12-03 18:05:24.043625] Simulador -- ciclo 25 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:05:24.044614] Simulador -- ciclo 25 - generando metricas para el loop [25]
+[2020-12-03 18:05:29.057397] Simulador -- ciclo 26 - inicio
+[2020-12-03 18:05:29.057397] Simulador -- ciclo 26 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:05:29.058396] Simulador -- ciclo 26 - generando metricas para el loop [26]
+[2020-12-03 18:05:34.071659] Simulador -- ciclo 27 - inicio
+[2020-12-03 18:05:34.071659] Simulador -- ciclo 27 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:05:34.072663] Simulador -- ciclo 27 - generando metricas para el loop [27]
+[2020-12-03 18:05:39.085881] Simulador -- ciclo 28 - inicio
+[2020-12-03 18:05:39.085881] Simulador -- ciclo 28 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:05:39.086870] Simulador -- ciclo 28 - generando metricas para el loop [28]
+[2020-12-03 18:05:44.100258] Simulador -- ciclo 29 - inicio
+[2020-12-03 18:05:44.100258] Simulador -- ciclo 29 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:05:44.101257] Simulador -- ciclo 29 - generando metricas para el loop [29]
+[2020-12-03 18:05:49.115460] Simulador -- ciclo 30 - inicio
+[2020-12-03 18:05:49.115460] Simulador -- ciclo 30 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:05:49.116460] Simulador -- ciclo 30 - generando metricas para el loop [30]
+[2020-12-03 18:05:54.132702] Simulador -- ciclo 31 - inicio
+[2020-12-03 18:05:54.132702] Simulador -- ciclo 31 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:05:54.133704] Simulador -- ciclo 31 - generando metricas para el loop [31]
+[2020-12-03 18:05:59.148689] Simulador -- ciclo 32 - inicio
+[2020-12-03 18:05:59.148689] Simulador -- ciclo 32 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:05:59.149680] Simulador -- ciclo 32 - generando metricas para el loop [32]
+[2020-12-03 18:07:35.640370] Simulador -- ciclo 0 - inicio
+[2020-12-03 18:07:35.641369] Simulador -- ciclo 0 - Hay 6 proceso/s en la cola de espera
+[2020-12-03 18:07:35.641369] Simulador -- ciclo 0 - Todavia no puedo ejecutar proceso de la cola de espera
+[2020-12-03 18:07:35.642369] Simulador -- ciclo 0 - PID [100] T Entrada [1]
+[2020-12-03 18:07:35.642369] Simulador -- ciclo 0 - No hay procesos en la cola de espera
+[2020-12-03 18:07:35.643368] Simulador -- ciclo 0 - generando metricas para el loop [0]
+[2020-12-03 18:07:35.647366] Simulador -- ciclo 0 - fin
+[2020-12-03 18:07:40.647968] Simulador -- ciclo 1 - inicio
+[2020-12-03 18:07:40.647968] Simulador -- ciclo 1 - Hay 6 proceso/s en la cola de espera
+[2020-12-03 18:07:40.648967] Simulador -- ciclo 1 - Sale de cola de espera -> PID: [100] ACCION [L] T0 [1] TA [10]
+[2020-12-03 18:07:40.649967] Simulador -- ciclo 1 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-12-03 18:07:40.649967] Simulador -- ciclo 1 - Primer DB disponible encontrada, nombre: [RECURSO_db_0] cantidad_recursos [10000] cantidad_lecturas [0]
+[2020-12-03 18:07:40.650967] Simulador -- ciclo 1 - Puedo ejecutar proceso actual
+[2020-12-03 18:07:40.651970] - PID 100 - Inicio
+[2020-12-03 18:07:40.653971] Simulador -- ciclo 1 - Todavia no puedo ejecutar proceso de la cola de espera
+[2020-12-03 18:07:40.653971] - PID 100 - Tomando 100 recursos ...
+[2020-12-03 18:07:40.653971] Simulador -- ciclo 1 - PID [101] T Entrada [2]
+[2020-12-03 18:07:40.654964] - PID 100 - Leyendo ...
+[2020-12-03 18:07:40.654964] Simulador -- ciclo 1 - No hay procesos en la cola de espera
+[2020-12-03 18:07:40.655963] Simulador -- ciclo 1 - generando metricas para el loop [1]
+[2020-12-03 18:07:40.660960] Simulador -- ciclo 1 - fin
+[2020-12-03 18:07:45.662491] Simulador -- ciclo 2 - inicio
+[2020-12-03 18:07:45.663489] Simulador -- ciclo 2 - Hay 5 proceso/s en la cola de espera
+[2020-12-03 18:07:45.663489] Simulador -- ciclo 2 - Sale de cola de espera -> PID: [101] ACCION [L] T0 [2] TA [10]
+[2020-12-03 18:07:45.664489] Simulador -- ciclo 2 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-12-03 18:07:45.665489] Simulador -- ciclo 2 - Primer DB disponible encontrada, nombre: [RECURSO_db_0] cantidad_recursos [9900] cantidad_lecturas [1]
+[2020-12-03 18:07:45.665489] Simulador -- ciclo 2 - Puedo ejecutar proceso actual
+[2020-12-03 18:07:45.666488] - PID 101 - Inicio
+[2020-12-03 18:07:45.668488] Simulador -- ciclo 2 - Todavia no puedo ejecutar proceso de la cola de espera
+[2020-12-03 18:07:45.668488] - PID 101 - Tomando 100 recursos ...
+[2020-12-03 18:07:45.669486] Simulador -- ciclo 2 - PID [102] T Entrada [3]
+[2020-12-03 18:07:45.669486] - PID 101 - Leyendo ...
+[2020-12-03 18:07:45.669486] Simulador -- ciclo 2 - No hay procesos en la cola de espera
+[2020-12-03 18:07:45.670486] Simulador -- ciclo 2 - generando metricas para el loop [2]
+[2020-12-03 18:07:45.677483] Simulador -- ciclo 2 - fin
+[2020-12-03 18:07:50.656560] - PID 100 - Termino la lectura ...
+[2020-12-03 18:07:50.656560] - PID 100 - Liberando 100 recursos ...
+[2020-12-03 18:07:50.657520] - PID 100 - Fin
+[2020-12-03 18:07:50.657520] Simulador -- ciclo 3 - Proceso 100 terminado ...
+[2020-12-03 18:07:50.679465] Simulador -- ciclo 3 - inicio
+[2020-12-03 18:07:50.679465] Simulador -- ciclo 3 - Hay 4 proceso/s en la cola de espera
+[2020-12-03 18:07:50.680464] Simulador -- ciclo 3 - Sale de cola de espera -> PID: [102] ACCION [L] T0 [3] TA [10]
+[2020-12-03 18:07:50.681470] Simulador -- ciclo 3 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-12-03 18:07:50.681470] Simulador -- ciclo 3 - Primer DB disponible encontrada, nombre: [RECURSO_db_0] cantidad_recursos [9900] cantidad_lecturas [1]
+[2020-12-03 18:07:50.682470] Simulador -- ciclo 3 - Puedo ejecutar proceso actual
+[2020-12-03 18:07:50.683451] - PID 102 - Inicio
+[2020-12-03 18:07:50.684451] Simulador -- ciclo 3 - Todavia no puedo ejecutar proceso de la cola de espera
+[2020-12-03 18:07:50.685450] Simulador -- ciclo 3 - PID [550] T Entrada [4]
+[2020-12-03 18:07:50.685450] - PID 102 - Tomando 100 recursos ...
+[2020-12-03 18:07:50.686449] Simulador -- ciclo 3 - No hay procesos en la cola de espera
+[2020-12-03 18:07:50.686449] Simulador -- ciclo 3 - generando metricas para el loop [3]
+[2020-12-03 18:07:50.686449] - PID 102 - Leyendo ...
+[2020-12-03 18:07:50.695444] Simulador -- ciclo 3 - fin
+[2020-12-03 18:07:55.670738] - PID 101 - Termino la lectura ...
+[2020-12-03 18:07:55.670738] - PID 101 - Liberando 100 recursos ...
+[2020-12-03 18:07:55.671747] - PID 101 - Fin
+[2020-12-03 18:07:55.671747] Simulador -- ciclo 4 - Proceso 101 terminado ...
+[2020-12-03 18:07:55.696988] Simulador -- ciclo 4 - inicio
+[2020-12-03 18:07:55.696988] Simulador -- ciclo 4 - Hay 3 proceso/s en la cola de espera
+[2020-12-03 18:07:55.696988] Simulador -- ciclo 4 - Sale de cola de espera -> PID: [550] ACCION [E] T0 [4] TA [25]
+[2020-12-03 18:07:55.697976] Simulador -- ciclo 4 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-12-03 18:07:55.697976] Simulador -- ciclo 4 - No puedo ejecutar actualmente, agrego a cola de procesos
+[2020-12-03 18:07:55.697976] Simulador -- ciclo 4 - Razon: todavia hay procesos leyendo 
+[2020-12-03 18:07:55.698976] Simulador -- ciclo 4 - Todavia no puedo ejecutar proceso de la cola de espera
+[2020-12-03 18:07:55.698976] Simulador -- ciclo 4 - PID [104] T Entrada [5]
+[2020-12-03 18:07:55.698976] Simulador -- ciclo 4 - No hay procesos en la cola de espera
+[2020-12-03 18:07:55.699975] Simulador -- ciclo 4 - generando metricas para el loop [4]
+[2020-12-03 18:07:55.709986] Simulador -- ciclo 4 - fin
+[2020-12-03 18:08:00.688201] - PID 102 - Termino la lectura ...
+[2020-12-03 18:08:00.688201] - PID 102 - Liberando 100 recursos ...
+[2020-12-03 18:08:00.689189] - PID 102 - Fin
+[2020-12-03 18:08:00.689189] Simulador -- ciclo 5 - Proceso 102 terminado ...
+[2020-12-03 18:08:00.710984] Simulador -- ciclo 5 - inicio
+[2020-12-03 18:08:00.710984] Simulador -- ciclo 5 - Hay 2 proceso/s en la cola de espera
+[2020-12-03 18:08:00.710984] Simulador -- ciclo 5 - Sale de cola de espera -> PID: [104] ACCION [L] T0 [5] TA [20]
+[2020-12-03 18:08:00.712014] Simulador -- ciclo 5 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-12-03 18:08:00.712014] Simulador -- ciclo 5 - No puedo ejecutar actualmente, agrego a cola de procesos
+[2020-12-03 18:08:00.712995] Simulador -- ciclo 5 - Razon: activada la interrupcion 
+[2020-12-03 18:08:00.712995] Simulador -- ciclo 5 - Todavia no puedo ejecutar proceso de la cola de espera
+[2020-12-03 18:08:00.713985] Simulador -- ciclo 5 - PID [551] T Entrada [6]
+[2020-12-03 18:08:00.713985] Simulador -- ciclo 5 - No hay procesos en la cola de espera
+[2020-12-03 18:08:00.714984] Simulador -- ciclo 5 - generando metricas para el loop [5]
+[2020-12-03 18:08:00.722980] Simulador -- ciclo 5 - fin
+[2020-12-03 18:08:05.724689] Simulador -- ciclo 6 - inicio
+[2020-12-03 18:08:05.724689] Simulador -- ciclo 6 - Hay 1 proceso/s en la cola de espera
+[2020-12-03 18:08:05.725679] Simulador -- ciclo 6 - Sale de cola de espera -> PID: [551] ACCION [E] T0 [6] TA [25]
+[2020-12-03 18:08:05.726695] Simulador -- ciclo 6 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-12-03 18:08:05.726695] Simulador -- ciclo 6 - Primer DB disponible encontrada, nombre: [RECURSO_db_0] cantidad_recursos [10000] cantidad_lecturas [0]
+[2020-12-03 18:08:05.727678] Simulador -- ciclo 6 - Puedo ejecutar proceso actual
+[2020-12-03 18:08:05.728693] - PID 551 - Inicio
+[2020-12-03 18:08:05.730677] - PID 551 - Escribiendo ...
+[2020-12-03 18:08:05.730677] Simulador -- ciclo 6 - No hay procesos en la cola de espera
+[2020-12-03 18:08:05.731677] Simulador -- ciclo 6 - generando metricas para el loop [6]
+[2020-12-03 18:08:05.743669] Simulador -- ciclo 6 - fin
+[2020-12-03 18:08:30.732452] - PID 551 - Termino la escritura ...
+[2020-12-03 18:08:30.732452] - PID 551 - Liberando mutex escritura ...
+[2020-12-03 18:08:30.733450] - PID 551 - Fin
+[2020-12-03 18:08:30.733450] Simulador -- ciclo 7 - Proceso 551 terminado ...
+[2020-12-03 18:10:05.145150] Simulador -- ciclo 0 - inicio
+[2020-12-03 18:10:05.146150] Simulador -- ciclo 0 - Hay 6 proceso/s en la cola de espera
+[2020-12-03 18:10:05.146150] Simulador -- ciclo 0 - Todavia no puedo ejecutar proceso de la cola de espera
+[2020-12-03 18:10:05.147149] Simulador -- ciclo 0 - PID [100] T Entrada [1]
+[2020-12-03 18:10:05.147149] Simulador -- ciclo 0 - No hay procesos en la cola de espera
+[2020-12-03 18:10:05.148148] Simulador -- ciclo 0 - generando metricas para el loop [0]
+[2020-12-03 18:10:05.152146] Simulador -- ciclo 0 - fin
+[2020-12-03 18:10:10.152160] Simulador -- ciclo 1 - inicio
+[2020-12-03 18:10:10.152160] Simulador -- ciclo 1 - Hay 6 proceso/s en la cola de espera
+[2020-12-03 18:10:10.153177] Simulador -- ciclo 1 - Sale de cola de espera -> PID: [100] ACCION [L] T0 [1] TA [10]
+[2020-12-03 18:10:10.153177] Simulador -- ciclo 1 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-12-03 18:10:10.154196] Simulador -- ciclo 1 - Primer DB disponible encontrada, nombre: [RECURSO_db_0] cantidad_recursos [10000] cantidad_lecturas [0]
+[2020-12-03 18:10:10.154196] Simulador -- ciclo 1 - Puedo ejecutar proceso actual
+[2020-12-03 18:10:10.155176] - PID 100 - Inicio
+[2020-12-03 18:10:10.157175] Simulador -- ciclo 1 - Todavia no puedo ejecutar proceso de la cola de espera
+[2020-12-03 18:10:10.157175] - PID 100 - Tomando 100 recursos ...
+[2020-12-03 18:10:10.157175] Simulador -- ciclo 1 - PID [101] T Entrada [2]
+[2020-12-03 18:10:10.158174] Simulador -- ciclo 1 - No hay procesos en la cola de espera
+[2020-12-03 18:10:10.158174] - PID 100 - Leyendo ...
+[2020-12-03 18:10:10.159157] Simulador -- ciclo 1 - generando metricas para el loop [1]
+[2020-12-03 18:10:10.165154] Simulador -- ciclo 1 - fin
+[2020-12-03 18:10:15.166706] Simulador -- ciclo 2 - inicio
+[2020-12-03 18:10:15.166706] Simulador -- ciclo 2 - Hay 5 proceso/s en la cola de espera
+[2020-12-03 18:10:15.167696] Simulador -- ciclo 2 - Sale de cola de espera -> PID: [101] ACCION [L] T0 [2] TA [10]
+[2020-12-03 18:10:15.168711] Simulador -- ciclo 2 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-12-03 18:10:15.168711] Simulador -- ciclo 2 - Primer DB disponible encontrada, nombre: [RECURSO_db_0] cantidad_recursos [9900] cantidad_lecturas [1]
+[2020-12-03 18:10:15.169710] Simulador -- ciclo 2 - Puedo ejecutar proceso actual
+[2020-12-03 18:10:15.170693] - PID 101 - Inicio
+[2020-12-03 18:10:15.171703] Simulador -- ciclo 2 - Todavia no puedo ejecutar proceso de la cola de espera
+[2020-12-03 18:10:15.172703] - PID 101 - Tomando 100 recursos ...
+[2020-12-03 18:10:15.172703] Simulador -- ciclo 2 - PID [102] T Entrada [3]
+[2020-12-03 18:10:15.173701] Simulador -- ciclo 2 - No hay procesos en la cola de espera
+[2020-12-03 18:10:15.173701] - PID 101 - Leyendo ...
+[2020-12-03 18:10:15.174691] Simulador -- ciclo 2 - generando metricas para el loop [2]
+[2020-12-03 18:10:15.180688] Simulador -- ciclo 2 - fin
+[2020-12-03 18:10:20.159505] - PID 100 - Termino la lectura ...
+[2020-12-03 18:10:20.159505] - PID 100 - Liberando 100 recursos ...
+[2020-12-03 18:10:20.160493] - PID 100 - Fin
+[2020-12-03 18:10:20.160493] Simulador -- ciclo 3 - Proceso 100 terminado ...
+[2020-12-03 18:10:20.181724] Simulador -- ciclo 3 - inicio
+[2020-12-03 18:10:20.181724] Simulador -- ciclo 3 - Hay 4 proceso/s en la cola de espera
+[2020-12-03 18:10:20.181724] Simulador -- ciclo 3 - Sale de cola de espera -> PID: [102] ACCION [L] T0 [3] TA [10]
+[2020-12-03 18:10:20.182725] Simulador -- ciclo 3 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-12-03 18:10:20.182725] Simulador -- ciclo 3 - Primer DB disponible encontrada, nombre: [RECURSO_db_0] cantidad_recursos [9900] cantidad_lecturas [1]
+[2020-12-03 18:10:20.183725] Simulador -- ciclo 3 - Puedo ejecutar proceso actual
+[2020-12-03 18:10:20.183725] - PID 102 - Inicio
+[2020-12-03 18:10:20.185735] Simulador -- ciclo 3 - Todavia no puedo ejecutar proceso de la cola de espera
+[2020-12-03 18:10:20.186723] Simulador -- ciclo 3 - PID [550] T Entrada [4]
+[2020-12-03 18:10:20.186723] - PID 102 - Tomando 100 recursos ...
+[2020-12-03 18:10:20.187722] Simulador -- ciclo 3 - No hay procesos en la cola de espera
+[2020-12-03 18:10:20.187722] - PID 102 - Leyendo ...
+[2020-12-03 18:10:20.187722] Simulador -- ciclo 3 - generando metricas para el loop [3]
+[2020-12-03 18:10:20.197724] Simulador -- ciclo 3 - fin
+[2020-12-03 18:10:25.175878] - PID 101 - Termino la lectura ...
+[2020-12-03 18:10:25.175878] - PID 101 - Liberando 100 recursos ...
+[2020-12-03 18:10:25.176866] - PID 101 - Fin
+[2020-12-03 18:10:25.176866] Simulador -- ciclo 4 - Proceso 101 terminado ...
+[2020-12-03 18:10:25.198289] Simulador -- ciclo 4 - inicio
+[2020-12-03 18:10:25.198289] Simulador -- ciclo 4 - Hay 3 proceso/s en la cola de espera
+[2020-12-03 18:10:25.199287] Simulador -- ciclo 4 - Sale de cola de espera -> PID: [550] ACCION [E] T0 [4] TA [25]
+[2020-12-03 18:10:25.199287] Simulador -- ciclo 4 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-12-03 18:10:25.199287] Simulador -- ciclo 4 - No puedo ejecutar actualmente, agrego a cola de procesos
+[2020-12-03 18:10:25.200287] Simulador -- ciclo 4 - Razon: todavia hay procesos leyendo 
+[2020-12-03 18:10:25.200287] Simulador -- ciclo 4 - Todavia no puedo ejecutar proceso de la cola de espera
+[2020-12-03 18:10:25.200287] Simulador -- ciclo 4 - PID [104] T Entrada [5]
+[2020-12-03 18:10:25.201286] Simulador -- ciclo 4 - No hay procesos en la cola de espera
+[2020-12-03 18:10:25.201286] Simulador -- ciclo 4 - generando metricas para el loop [4]
+[2020-12-03 18:10:25.211297] Simulador -- ciclo 4 - fin
+[2020-12-03 18:10:30.188889] - PID 102 - Termino la lectura ...
+[2020-12-03 18:10:30.188889] - PID 102 - Liberando 100 recursos ...
+[2020-12-03 18:10:30.189891] - PID 102 - Fin
+[2020-12-03 18:10:30.190894] Simulador -- ciclo 5 - Proceso 102 terminado ...
+[2020-12-03 18:10:30.212894] Simulador -- ciclo 5 - inicio
+[2020-12-03 18:10:30.212894] Simulador -- ciclo 5 - Hay 2 proceso/s en la cola de espera
+[2020-12-03 18:10:30.213883] Simulador -- ciclo 5 - Sale de cola de espera -> PID: [104] ACCION [L] T0 [5] TA [20]
+[2020-12-03 18:10:30.214877] Simulador -- ciclo 5 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-12-03 18:10:30.214877] Simulador -- ciclo 5 - No puedo ejecutar actualmente, agrego a cola de procesos
+[2020-12-03 18:10:30.215876] Simulador -- ciclo 5 - Razon: activada la interrupcion 
+[2020-12-03 18:10:30.215876] Simulador -- ciclo 5 - Todavia no puedo ejecutar proceso de la cola de espera
+[2020-12-03 18:10:30.216876] Simulador -- ciclo 5 - PID [551] T Entrada [6]
+[2020-12-03 18:10:30.217876] Simulador -- ciclo 5 - No hay procesos en la cola de espera
+[2020-12-03 18:10:30.217876] Simulador -- ciclo 5 - generando metricas para el loop [5]
+[2020-12-03 18:10:30.228868] Simulador -- ciclo 5 - fin
+[2020-12-03 18:10:35.230265] Simulador -- ciclo 6 - inicio
+[2020-12-03 18:10:35.230265] Simulador -- ciclo 6 - Hay 1 proceso/s en la cola de espera
+[2020-12-03 18:10:35.231253] Simulador -- ciclo 6 - Sale de cola de espera -> PID: [551] ACCION [E] T0 [6] TA [25]
+[2020-12-03 18:10:35.232270] Simulador -- ciclo 6 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-12-03 18:10:35.232270] Simulador -- ciclo 6 - Primer DB disponible encontrada, nombre: [RECURSO_db_0] cantidad_recursos [10000] cantidad_lecturas [0]
+[2020-12-03 18:10:35.233280] Simulador -- ciclo 6 - Puedo ejecutar proceso actual
+[2020-12-03 18:10:35.235261] Simulador -- ciclo 6 - No hay procesos en la cola de espera
+[2020-12-03 18:10:35.234252] - PID 551 - Inicio
+[2020-12-03 18:10:35.236250] Simulador -- ciclo 6 - generando metricas para el loop [6]
+[2020-12-03 18:10:35.236250] - PID 551 - Escribiendo ...
+[2020-12-03 18:10:35.248247] Simulador -- ciclo 6 - fin
+[2020-12-03 18:10:40.249839] Simulador -- ciclo 7 - inicio
+[2020-12-03 18:10:40.249839] Simulador -- ciclo 7 - proximo proceso escritor tiene prioridad
+[2020-12-03 18:10:40.250840] Simulador -- ciclo 7 - PID: [550] ACCION [E] T0 [4] TA [25]
+[2020-12-03 18:10:40.250840] Simulador -- ciclo 7 - Hay 2 proceso/s esperando que se liberen recursos
+[2020-12-03 18:10:40.251840] Simulador -- ciclo 7 - Cola de procesos pendientes [550, 104]
+[2020-12-03 18:10:40.251840] Simulador -- ciclo 7 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-12-03 18:10:40.252839] Simulador -- ciclo 7 - Todavia no puedo ejecutar proceso pendiente
+[2020-12-03 18:10:40.252839] Simulador -- ciclo 7 - Razon: todavia hay un proceso escribiendo 
+[2020-12-03 18:10:40.252839] Simulador -- ciclo 7 - generando metricas para el loop [7]
+[2020-12-03 18:10:40.264832] Simulador -- ciclo 7 - fin
+[2020-12-03 18:10:45.265637] Simulador -- ciclo 8 - inicio
+[2020-12-03 18:10:45.265637] Simulador -- ciclo 8 - proximo proceso escritor tiene prioridad
+[2020-12-03 18:10:45.266625] Simulador -- ciclo 8 - PID: [550] ACCION [E] T0 [4] TA [25]
+[2020-12-03 18:10:45.266625] Simulador -- ciclo 8 - Hay 2 proceso/s esperando que se liberen recursos
+[2020-12-03 18:10:45.267625] Simulador -- ciclo 8 - Cola de procesos pendientes [550, 104]
+[2020-12-03 18:10:45.267625] Simulador -- ciclo 8 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-12-03 18:10:45.268624] Simulador -- ciclo 8 - Todavia no puedo ejecutar proceso pendiente
+[2020-12-03 18:10:45.268624] Simulador -- ciclo 8 - Razon: todavia hay un proceso escribiendo 
+[2020-12-03 18:10:45.268624] Simulador -- ciclo 8 - generando metricas para el loop [8]
+[2020-12-03 18:10:45.280617] Simulador -- ciclo 8 - fin
+[2020-12-03 18:10:50.281075] Simulador -- ciclo 9 - inicio
+[2020-12-03 18:10:50.282059] Simulador -- ciclo 9 - proximo proceso escritor tiene prioridad
+[2020-12-03 18:10:50.282059] Simulador -- ciclo 9 - PID: [550] ACCION [E] T0 [4] TA [25]
+[2020-12-03 18:10:50.283058] Simulador -- ciclo 9 - Hay 2 proceso/s esperando que se liberen recursos
+[2020-12-03 18:10:50.283058] Simulador -- ciclo 9 - Cola de procesos pendientes [550, 104]
+[2020-12-03 18:10:50.284058] Simulador -- ciclo 9 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-12-03 18:10:50.284058] Simulador -- ciclo 9 - Todavia no puedo ejecutar proceso pendiente
+[2020-12-03 18:10:50.285057] Simulador -- ciclo 9 - Razon: todavia hay un proceso escribiendo 
+[2020-12-03 18:10:50.285057] Simulador -- ciclo 9 - generando metricas para el loop [9]
+[2020-12-03 18:10:50.297051] Simulador -- ciclo 9 - fin
+[2020-12-03 18:10:55.298769] Simulador -- ciclo 10 - inicio
+[2020-12-03 18:10:55.298769] Simulador -- ciclo 10 - proximo proceso escritor tiene prioridad
+[2020-12-03 18:10:55.299758] Simulador -- ciclo 10 - PID: [550] ACCION [E] T0 [4] TA [25]
+[2020-12-03 18:10:55.299758] Simulador -- ciclo 10 - Hay 2 proceso/s esperando que se liberen recursos
+[2020-12-03 18:10:55.300758] Simulador -- ciclo 10 - Cola de procesos pendientes [550, 104]
+[2020-12-03 18:10:55.300758] Simulador -- ciclo 10 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-12-03 18:10:55.301757] Simulador -- ciclo 10 - Todavia no puedo ejecutar proceso pendiente
+[2020-12-03 18:10:55.301757] Simulador -- ciclo 10 - Razon: todavia hay un proceso escribiendo 
+[2020-12-03 18:10:55.301757] Simulador -- ciclo 10 - generando metricas para el loop [10]
+[2020-12-03 18:10:55.313766] Simulador -- ciclo 10 - fin
+[2020-12-03 18:11:00.238502] - PID 551 - Termino la escritura ...
+[2020-12-03 18:11:00.238502] - PID 551 - Liberando mutex escritura ...
+[2020-12-03 18:11:00.239520] - PID 551 - Fin
+[2020-12-03 18:11:00.239520] Simulador -- ciclo 11 - Proceso 551 terminado ...
+[2020-12-03 18:11:00.314766] Simulador -- ciclo 11 - inicio
+[2020-12-03 18:11:00.314766] Simulador -- ciclo 11 - proximo proceso escritor tiene prioridad
+[2020-12-03 18:11:00.315777] Simulador -- ciclo 11 - PID: [550] ACCION [E] T0 [4] TA [25]
+[2020-12-03 18:11:00.315777] Simulador -- ciclo 11 - Hay 2 proceso/s esperando que se liberen recursos
+[2020-12-03 18:11:00.315777] Simulador -- ciclo 11 - Cola de procesos pendientes [550, 104]
+[2020-12-03 18:11:00.316767] Simulador -- ciclo 11 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-12-03 18:11:00.316767] Simulador -- ciclo 11 - Primer DB disponible encontrada, nombre: [RECURSO_db_0] cantidad_recursos [10000] cantidad_lecturas [0]
+[2020-12-03 18:11:00.317766] Simulador -- ciclo 11 - Puedo ejecutar proceso pendiente
+[2020-12-03 18:11:00.318766] - PID 550 - Inicio
+[2020-12-03 18:11:00.319775] Simulador -- ciclo 11 - generando metricas para el loop [11]
+[2020-12-03 18:11:00.320774] - PID 550 - Escribiendo ...
+[2020-12-03 18:11:00.332771] Simulador -- ciclo 11 - fin
+[2020-12-03 18:11:05.333835] Simulador -- ciclo 12 - inicio
+[2020-12-03 18:11:05.333835] Simulador -- ciclo 12 - Hay 1 proceso/s esperando que se liberen recursos
+[2020-12-03 18:11:05.334832] Simulador -- ciclo 12 - Cola de procesos pendientes [104]
+[2020-12-03 18:11:05.334832] Simulador -- ciclo 12 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-12-03 18:11:05.335817] Simulador -- ciclo 12 - Todavia no puedo ejecutar proceso pendiente
+[2020-12-03 18:11:05.335817] Simulador -- ciclo 12 - Razon: mutex de escritura activado 
+[2020-12-03 18:11:05.336817] Simulador -- ciclo 12 - generando metricas para el loop [12]
+[2020-12-03 18:11:05.349810] Simulador -- ciclo 12 - fin
+[2020-12-03 18:11:10.349975] Simulador -- ciclo 13 - inicio
+[2020-12-03 18:11:10.349975] Simulador -- ciclo 13 - Hay 1 proceso/s esperando que se liberen recursos
+[2020-12-03 18:11:10.351010] Simulador -- ciclo 13 - Cola de procesos pendientes [104]
+[2020-12-03 18:11:10.351973] Simulador -- ciclo 13 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-12-03 18:11:10.351973] Simulador -- ciclo 13 - Todavia no puedo ejecutar proceso pendiente
+[2020-12-03 18:11:10.351973] Simulador -- ciclo 13 - Razon: mutex de escritura activado 
+[2020-12-03 18:11:10.352988] Simulador -- ciclo 13 - generando metricas para el loop [13]
+[2020-12-03 18:11:10.364956] Simulador -- ciclo 13 - fin
+[2020-12-03 18:11:15.366086] Simulador -- ciclo 14 - inicio
+[2020-12-03 18:11:15.366086] Simulador -- ciclo 14 - Hay 1 proceso/s esperando que se liberen recursos
+[2020-12-03 18:11:15.367075] Simulador -- ciclo 14 - Cola de procesos pendientes [104]
+[2020-12-03 18:11:15.367075] Simulador -- ciclo 14 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-12-03 18:11:15.368075] Simulador -- ciclo 14 - Todavia no puedo ejecutar proceso pendiente
+[2020-12-03 18:11:15.368075] Simulador -- ciclo 14 - Razon: mutex de escritura activado 
+[2020-12-03 18:11:15.369074] Simulador -- ciclo 14 - generando metricas para el loop [14]
+[2020-12-03 18:11:15.381068] Simulador -- ciclo 14 - fin
+[2020-12-03 18:11:20.382370] Simulador -- ciclo 15 - inicio
+[2020-12-03 18:11:20.382370] Simulador -- ciclo 15 - Hay 1 proceso/s esperando que se liberen recursos
+[2020-12-03 18:11:20.383389] Simulador -- ciclo 15 - Cola de procesos pendientes [104]
+[2020-12-03 18:11:20.383389] Simulador -- ciclo 15 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-12-03 18:11:20.384383] Simulador -- ciclo 15 - Todavia no puedo ejecutar proceso pendiente
+[2020-12-03 18:11:20.384383] Simulador -- ciclo 15 - Razon: mutex de escritura activado 
+[2020-12-03 18:11:20.385370] Simulador -- ciclo 15 - generando metricas para el loop [15]
+[2020-12-03 18:11:20.397364] Simulador -- ciclo 15 - fin
+[2020-12-03 18:11:25.322655] - PID 550 - Termino la escritura ...
+[2020-12-03 18:11:25.322655] - PID 550 - Liberando mutex escritura ...
+[2020-12-03 18:11:25.323644] - PID 550 - Fin
+[2020-12-03 18:11:25.323644] Simulador -- ciclo 16 - Proceso 550 terminado ...
+[2020-12-03 18:11:25.398500] Simulador -- ciclo 16 - inicio
+[2020-12-03 18:11:25.398500] Simulador -- ciclo 16 - Hay 1 proceso/s esperando que se liberen recursos
+[2020-12-03 18:11:25.399529] Simulador -- ciclo 16 - Cola de procesos pendientes [104]
+[2020-12-03 18:11:25.399529] Simulador -- ciclo 16 - Determinando recurso disponible del pool de 1 DB/s ...
+[2020-12-03 18:11:25.400517] Simulador -- ciclo 16 - Primer DB disponible encontrada, nombre: [RECURSO_db_0] cantidad_recursos [10000] cantidad_lecturas [0]
+[2020-12-03 18:11:25.400517] Simulador -- ciclo 16 - Puedo ejecutar proceso pendiente
+[2020-12-03 18:11:25.402510] Simulador -- ciclo 16 - generando metricas para el loop [16]
+[2020-12-03 18:11:25.401534] - PID 104 - Inicio
+[2020-12-03 18:11:25.403500] - PID 104 - Tomando 100 recursos ...
+[2020-12-03 18:11:25.415508] Simulador -- ciclo 16 - fin
+[2020-12-03 18:11:25.415508] - PID 104 - Leyendo ...
+[2020-12-03 18:11:30.417376] Simulador -- ciclo 17 - inicio
+[2020-12-03 18:11:30.417376] Simulador -- ciclo 17 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:11:30.418376] Simulador -- ciclo 17 - generando metricas para el loop [17]
+[2020-12-03 18:11:35.431365] Simulador -- ciclo 18 - inicio
+[2020-12-03 18:11:35.431365] Simulador -- ciclo 18 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:11:35.432366] Simulador -- ciclo 18 - generando metricas para el loop [18]
+[2020-12-03 18:11:40.445144] Simulador -- ciclo 19 - inicio
+[2020-12-03 18:11:40.445144] Simulador -- ciclo 19 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:11:40.446144] Simulador -- ciclo 19 - generando metricas para el loop [19]
+[2020-12-03 18:11:45.418083] - PID 104 - Termino la lectura ...
+[2020-12-03 18:11:45.418083] - PID 104 - Liberando 100 recursos ...
+[2020-12-03 18:11:45.419083] - PID 104 - Fin
+[2020-12-03 18:11:45.419083] Simulador -- ciclo 20 - Proceso 104 terminado ...
+[2020-12-03 18:11:45.460069] Simulador -- ciclo 20 - inicio
+[2020-12-03 18:11:45.460069] Simulador -- ciclo 20 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:11:45.461060] Simulador -- ciclo 20 - generando metricas para el loop [20]
+[2020-12-03 18:11:50.472068] Simulador -- ciclo 21 - inicio
+[2020-12-03 18:11:50.472068] Simulador -- ciclo 21 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:11:50.473089] Simulador -- ciclo 21 - generando metricas para el loop [21]
+[2020-12-03 18:11:55.484078] Simulador -- ciclo 22 - inicio
+[2020-12-03 18:11:55.484078] Simulador -- ciclo 22 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:11:55.485091] Simulador -- ciclo 22 - generando metricas para el loop [22]
+[2020-12-03 18:12:00.496354] Simulador -- ciclo 23 - inicio
+[2020-12-03 18:12:00.496354] Simulador -- ciclo 23 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:12:00.497353] Simulador -- ciclo 23 - generando metricas para el loop [23]
+[2020-12-03 18:12:05.509635] Simulador -- ciclo 24 - inicio
+[2020-12-03 18:12:05.509635] Simulador -- ciclo 24 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:12:05.510624] Simulador -- ciclo 24 - generando metricas para el loop [24]
+[2020-12-03 18:12:10.521633] Simulador -- ciclo 25 - inicio
+[2020-12-03 18:12:10.521633] Simulador -- ciclo 25 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:12:10.522659] Simulador -- ciclo 25 - generando metricas para el loop [25]
+[2020-12-03 18:12:15.535082] Simulador -- ciclo 26 - inicio
+[2020-12-03 18:12:15.535082] Simulador -- ciclo 26 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:12:15.536070] Simulador -- ciclo 26 - generando metricas para el loop [26]
+[2020-12-03 18:12:20.548232] Simulador -- ciclo 27 - inicio
+[2020-12-03 18:12:20.548232] Simulador -- ciclo 27 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:12:20.549230] Simulador -- ciclo 27 - generando metricas para el loop [27]
+[2020-12-03 18:12:25.561924] Simulador -- ciclo 28 - inicio
+[2020-12-03 18:12:25.561924] Simulador -- ciclo 28 - Nada mas que procesar... espero hasta el proximo ciclo [5s]
+[2020-12-03 18:12:25.562913] Simulador -- ciclo 28 - generando metricas para el loop [28]

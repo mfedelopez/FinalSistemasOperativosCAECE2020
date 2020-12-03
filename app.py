@@ -179,7 +179,7 @@ if __name__ == '__main__':
             #   T5 - L
             #   T6 - E
             #   Resultado: los tres procesos de lectura se ejecutan en simultaneo,
-            #               Al terminar los procesos de lectura, comienza el proceso de escritura pid=550
+            #               Al terminar los procesos de lectura, comienza el proceso de escritura pid=550 (TEST EXCLUSION MUTUA)
             #               tarda 25s bloqueando el recurso (TEST DE BLOQUEO)
             #               luego llegan 2 procesos, uno de lectura pid=104 y otro de escritura pid=551
             #               al terminar de ejecutar el proceso de escritura pid=551 (no hay prioridad entre procesos de escritura)
