@@ -65,9 +65,6 @@ class Proceso:
             self.log(f'Liberando {self.demanda_recursos} recursos ...')            
             recurso.liberar_recursos(self.demanda_recursos)
         else:
-            self.log(f'Tomando mutex escritura ...')
-            recurso.bloquear_mutex()
-            
             #simulo procesamiento
             self.log('Escribiendo ...')
             time.sleep(self.tiempo_accion)

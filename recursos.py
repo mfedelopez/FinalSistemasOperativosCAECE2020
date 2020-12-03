@@ -93,6 +93,7 @@ class Recurso:
             #2-no hay lectores ejecutandose actualmente
             #3-no hay otro escritor ejecutandose actualmente (mutex_lectura)
             if not self.mutex_escritura and not self.cantidad_lecturas:# and not self.mutex_interrupcion:
+                self.bloquear_mutex()
                 return True, 'OK'
             else:
                 #enumeramos los errores que pueden llegar a darse para mejor logeo
