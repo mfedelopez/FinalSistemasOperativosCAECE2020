@@ -148,7 +148,7 @@ if __name__ == '__main__':
     #inicializacion
     app = App()
     
-    test = 1
+    test = 3
     
     if test in [1]:
         #TEST 1

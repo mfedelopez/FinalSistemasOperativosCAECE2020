@@ -1,27 +1,29 @@
-[2020-12-03 18:12:25.564912] Resumen de la simulacion - ciclo 28
+[2020-12-03 18:22:00.536888] Resumen de la simulacion - ciclo 15
 ---------------------------------------------------------------------------------
 Cantidad de procesos esperando: 0 
 Cantidad de procesos ejecutando: 0
 Cantidad de procesos esperando recursos: 0
-Cantidad de procesos terminados: 6
+Cantidad de procesos terminados: 8
 
 
 Procesos terminados: 
-[100 101 102 551 550 104] 
-Tiempo promedio de ejecucion [t(L)] = 12.5s 
-Tiempo promedio de ejecucion [t(E)] = 25.0s 
-Tiempo promedio de ejecucion [t(L) + t(E)] = 16.666666666666668s
-Tiempo total ejecutando procesos = 100s 
+[501 502 103 102 101 104 105 503] 
+Tiempo promedio de ejecucion [t(L)] = 10.0s 
+Tiempo promedio de ejecucion [t(E)] = 20.0s 
+Tiempo promedio de ejecucion [t(L) + t(E)] = 13.75s
+Tiempo total ejecutando procesos = 110s 
 
 +----+----------+-----------------+------------------+-------+--------------------+----------------+---------------------+
 |    | accion   |   tiempo_accion |   tiempo_entrada |   pid |   demanda_recursos |   total_tiempo | recurso_utilizado   |
 |----+----------+-----------------+------------------+-------+--------------------+----------------+---------------------|
-|  0 | L        |              10 |                1 |   100 |                100 |             10 | RECURSO_db_0        |
-|  1 | L        |              10 |                2 |   101 |                100 |             10 | RECURSO_db_0        |
-|  2 | L        |              10 |                3 |   102 |                100 |             10 | RECURSO_db_0        |
-|  3 | E        |              25 |                6 |   551 |                100 |             25 | RECURSO_db_0        |
-|  4 | E        |              25 |                4 |   550 |                100 |             25 | RECURSO_db_0        |
-|  5 | L        |              20 |                5 |   104 |                100 |             20 | RECURSO_db_0        |
+|  0 | E        |              20 |                1 |   501 |                100 |             20 | RECURSO_db_0        |
+|  1 | E        |              20 |                1 |   502 |                100 |             20 | RECURSO_db_1        |
+|  2 | L        |              10 |                2 |   103 |                100 |             10 | RECURSO_db_0        |
+|  3 | L        |              10 |                2 |   102 |                100 |             10 | RECURSO_db_0        |
+|  4 | L        |              10 |                2 |   101 |                100 |             10 | RECURSO_db_0        |
+|  5 | L        |              10 |               10 |   104 |                100 |             10 | RECURSO_db_1        |
+|  6 | L        |              10 |               10 |   105 |                100 |             10 | RECURSO_db_1        |
+|  7 | E        |              20 |                9 |   503 |                100 |             20 | RECURSO_db_0        |
 +----+----------+-----------------+------------------+-------+--------------------+----------------+---------------------+
 
 Tabla de ejecucion de por ciclo 
@@ -29,33 +31,20 @@ Tabla de ejecucion de por ciclo
 +----+----------------+----------------------+------------------------+--------------------------+--------------+-------------------------+--------------------------+-----------------------+-------------------------+
 |    |   delta_tiempo |   estado_cola_espera |   estado_cola_procesos |   estado_cola_terminados | rec_nombre   |   rec_cantidad_recursos | rec_mutex_interrupcion   | rec_mutex_escritura   |   rec_cantidad_lecturas |
 |----+----------------+----------------------+------------------------+--------------------------+--------------+-------------------------+--------------------------+-----------------------+-------------------------|
-|  0 |              0 |                    0 |                      0 |                        0 | RECURSO_db_0 |                   10000 | False                    | False                 |                       0 |
-|  1 |              0 |                    1 |                      0 |                        0 | RECURSO_db_0 |                    9900 | False                    | False                 |                       1 |
-|  2 |              0 |                    1 |                      0 |                        0 | RECURSO_db_0 |                    9800 | False                    | False                 |                       2 |
-|  3 |              0 |                    1 |                      0 |                        0 | RECURSO_db_0 |                    9800 | False                    | False                 |                       2 |
-|  4 |              0 |                    1 |                     -1 |                        0 | RECURSO_db_0 |                    9900 | True                     | False                 |                       1 |
-|  5 |              0 |                    1 |                     -1 |                        0 | RECURSO_db_0 |                   10000 | True                     | False                 |                       0 |
-|  6 |              0 |                    1 |                      0 |                        0 | RECURSO_db_0 |                   10000 | True                     | True                  |                       0 |
-|  7 |              0 |                    0 |                      0 |                        0 | RECURSO_db_0 |                   10000 | True                     | True                  |                       0 |
-|  8 |              0 |                    0 |                      0 |                        0 | RECURSO_db_0 |                   10000 | True                     | True                  |                       0 |
-|  9 |              0 |                    0 |                      0 |                        0 | RECURSO_db_0 |                   10000 | True                     | True                  |                       0 |
-| 10 |              0 |                    0 |                      0 |                        0 | RECURSO_db_0 |                   10000 | True                     | True                  |                       0 |
-| 11 |              0 |                    0 |                      1 |                        0 | RECURSO_db_0 |                   10000 | False                    | True                  |                       0 |
-| 12 |              0 |                    0 |                      0 |                        0 | RECURSO_db_0 |                   10000 | False                    | True                  |                       0 |
-| 13 |              0 |                    0 |                      0 |                        0 | RECURSO_db_0 |                   10000 | False                    | True                  |                       0 |
-| 14 |              0 |                    0 |                      0 |                        0 | RECURSO_db_0 |                   10000 | False                    | True                  |                       0 |
-| 15 |              0 |                    0 |                      0 |                        0 | RECURSO_db_0 |                   10000 | False                    | True                  |                       0 |
-| 16 |              0 |                    0 |                      1 |                        0 | RECURSO_db_0 |                   10000 | False                    | False                 |                       0 |
-| 17 |              0 |                    0 |                      0 |                        0 | RECURSO_db_0 |                    9900 | False                    | False                 |                       1 |
-| 18 |              0 |                    0 |                      0 |                        0 | RECURSO_db_0 |                    9900 | False                    | False                 |                       1 |
-| 19 |              0 |                    0 |                      0 |                        0 | RECURSO_db_0 |                    9900 | False                    | False                 |                       1 |
-| 20 |              0 |                    0 |                      0 |                        0 | RECURSO_db_0 |                   10000 | False                    | False                 |                       0 |
-| 21 |              0 |                    0 |                      0 |                        0 | RECURSO_db_0 |                   10000 | False                    | False                 |                       0 |
-| 22 |              0 |                    0 |                      0 |                        0 | RECURSO_db_0 |                   10000 | False                    | False                 |                       0 |
-| 23 |              0 |                    0 |                      0 |                        0 | RECURSO_db_0 |                   10000 | False                    | False                 |                       0 |
-| 24 |              0 |                    0 |                      0 |                        0 | RECURSO_db_0 |                   10000 | False                    | False                 |                       0 |
-| 25 |              0 |                    0 |                      0 |                        0 | RECURSO_db_0 |                   10000 | False                    | False                 |                       0 |
-| 26 |              0 |                    0 |                      0 |                        0 | RECURSO_db_0 |                   10000 | False                    | False                 |                       0 |
-| 27 |              0 |                    0 |                      0 |                        0 | RECURSO_db_0 |                   10000 | False                    | False                 |                       0 |
-| 28 |              0 |                    0 |                      0 |                        0 | RECURSO_db_0 |                   10000 | False                    | False                 |                       0 |
+|  0 |              0 |                    0 |                      0 |                        0 | RECURSO_db_1 |                     500 | False                    | False                 |                       0 |
+|  1 |              0 |                    2 |                      0 |                        0 | RECURSO_db_1 |                     500 | False                    | True                  |                       0 |
+|  2 |              0 |                    3 |                     -3 |                        0 | RECURSO_db_1 |                     500 | False                    | True                  |                       0 |
+|  3 |              0 |                    0 |                      0 |                        0 | RECURSO_db_1 |                     500 | False                    | True                  |                       0 |
+|  4 |              0 |                    0 |                      0 |                        0 | RECURSO_db_1 |                     500 | False                    | True                  |                       0 |
+|  5 |              0 |                    0 |                      1 |                        0 | RECURSO_db_1 |                     500 | False                    | False                 |                       0 |
+|  6 |              0 |                    0 |                      1 |                        0 | RECURSO_db_1 |                     500 | False                    | False                 |                       0 |
+|  7 |              0 |                    0 |                      1 |                        0 | RECURSO_db_1 |                     500 | False                    | False                 |                       0 |
+|  8 |              0 |                    0 |                      0 |                        0 | RECURSO_db_1 |                     500 | False                    | False                 |                       0 |
+|  9 |              0 |                    1 |                      0 |                        0 | RECURSO_db_1 |                     500 | False                    | False                 |                       0 |
+| 10 |              0 |                    2 |                      0 |                        0 | RECURSO_db_1 |                     300 | False                    | False                 |                       2 |
+| 11 |              0 |                    0 |                      0 |                        0 | RECURSO_db_1 |                     300 | False                    | False                 |                       2 |
+| 12 |              0 |                    0 |                      0 |                        0 | RECURSO_db_1 |                     500 | False                    | False                 |                       0 |
+| 13 |              0 |                    0 |                      0 |                        0 | RECURSO_db_1 |                     500 | False                    | False                 |                       0 |
+| 14 |              0 |                    0 |                      0 |                        0 | RECURSO_db_1 |                     500 | False                    | False                 |                       0 |
+| 15 |              0 |                    0 |                      0 |                        0 | RECURSO_db_1 |                     500 | False                    | False                 |                       0 |
 +----+----------------+----------------------+------------------------+--------------------------+--------------+-------------------------+--------------------------+-----------------------+-------------------------+

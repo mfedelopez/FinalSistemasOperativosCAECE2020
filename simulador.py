@@ -216,6 +216,10 @@ class Simulador:
                 self.ciclo += 1
                 time.sleep(self.tiempo_sleep)
                 self.ciclo_muerto += 1
+                #con mas de 50 ciclos sin hacer nada frenamos la ejecucion
+                if self.ciclo_muerto in [5]:
+                    self.log_simulacion(f'Simulacion terminada en ciclo {self.ciclo} despues de {5} ciclos sin actividad')
+                    break
                 continue
             
             
@@ -295,12 +299,6 @@ class Simulador:
 
             #refrescamos la pantalla
             #self.app.refrescar_pantalla(self)
-            time.sleep(self.tiempo_sleep)
-            
-            #con mas de 50 ciclos sin hacer nada frenamos la ejecucion
-            if self.ciclo_muerto in [10]:
-                self.log_simulacion(f'Simulacion terminada en ciclo {self.ciclo} despues de {10} ciclos sin actividad')
-                break
-                
+            time.sleep(self.tiempo_sleep)   
 
 
